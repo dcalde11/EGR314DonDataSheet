@@ -17,8 +17,7 @@ for<br>
 ## Introduction
 As a member of Team 307, my responsibility was/is to ensure everyone stays on track to meet our project deadlines while maintaining a professional tone when enforcing quality standards and espectation. This will
 be accomplished by supporting my teammates with the development of their modulus within the project. Not only that but by managing the schedule by making tough calls on priorities, and sacraficing some deadlines
-for others. While my main subsystem still hasn't been disclosed I look forward to the collaboration this project brings. I also supported my teammates with the development of their parts of the project. Managing
-the schedule meant making tough calls on priorities, and though some deadlines shifted, I am proud of our final result. This record outlines my contributions to the electrical setup and performance that made the
+for others. While my main subsystem still hasn't been disclosed I look forward to the collaboration this project brings. This record outlines my contributions to the electrical setup and performance that made the
 project a success.
 
 ### Project Summary
