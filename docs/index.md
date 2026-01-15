@@ -27,7 +27,7 @@ for<br>
 * To review the details and relationships between the system’s components, refer to the [Block Diagram](https://dcalde11.github.io/EGR314DonDataSheet/02-Block-Diagram/Block-Diagram/).
 * To review the system’s components, refer to the [Component Selection](https://dcalde11.github.io/EGR314DonDataSheet/03-Component-Selection/Component-Selection/).
 * To review the cost of components in the subsystem, refer to the [Bill of Materials](https://dcalde11.github.io/EGR314DonDataSheet/04-BOM/BOM/).
-* To review the layout of the individual subsystem, refer to the [Schematic](https://dcalde11.github.io/04-Schematic/schematic/).
+* To review the layout of the individual subsystem, refer to the [Schematic](https://dcalde11.github.io/EGR314DonDataSheet/05-Schematic/schematic/).
 * To review power distribution, refer to the [Power Budget](https://dcalde11.github.io/05-Power-Budget/Power-Budget/).
 * To review the physical board layout, refer to the [PCB Design](https://dcalde11.github.io/06-PCB/pcb/).
 * To review the firmware implementation, refer to the [Microcontroller Code](https://dcalde11.github.io/07-Micro-Controller%20Code/microcontrollercode/).
