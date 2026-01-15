@@ -24,7 +24,7 @@ for<br>
 * Add context that ties into the link to your [team report.](https://embedded-systems-design.github.io/template_report/)
 
 ### My Contribution
-* To review the details and relationships between the system’s components, refer to the [Block Diagram](https://dcalde11.github.io/01-Block-Diagram/Block-Diagram/).
+* To review the details and relationships between the system’s components, refer to the [Block Diagram](https://dcalde11.github.io/EGR314DonDataSheet/02-Block-Diagram/Block-Diagram/).
 * To review the system’s components, refer to the [Component Selection](https://dcalde11.github.io/02-Component-Selection/Component-Selection/).
 * To review the cost of components in the subsystem, refer to the [Bill of Materials](https://dcalde11.github.io/03-BOM/BOM/).
 * To review the layout of the individual subsystem, refer to the [Schematic](https://dcalde11.github.io/04-Schematic/schematic/).
