@@ -28,8 +28,10 @@ for<br>
 * To review the system’s components, refer to the [Component Selection](https://dcalde11.github.io/EGR314DonDataSheet/03-Component-Selection/Component-Selection/).
 * To review the cost of components in the subsystem, refer to the [Bill of Materials](https://dcalde11.github.io/EGR314DonDataSheet/04-BOM/BOM/).
 * To review the layout of the individual subsystem, refer to the [Schematic](https://dcalde11.github.io/EGR314DonDataSheet/05-Schematic/schematic/).
-* To review power distribution, refer to the [Power Budget](https://dcalde11.github.io/05-Power-Budget/Power-Budget/).
-* To review the physical board layout, refer to the [PCB Design](https://dcalde11.github.io/06-PCB/pcb/).
-* To review the firmware implementation, refer to the [Microcontroller Code](https://dcalde11.github.io/07-Micro-Controller%20Code/microcontrollercode/).
-* To review additional references and documentation, refer to the [Resources](https://dcalde11.github.io/08-Resources/resources/).
+
+  **PlaceHolders
+* To review power distribution, refer to the [Power Budget](PlaceLink).
+* To review the physical board layout, refer to the [PCB Design](PlaceLink).
+* To review the firmware implementation, refer to the [Microcontroller Code](PasteLink).
+* To review additional references and documentation, refer to the [Resources](PasteLink).
 * To review proposed hardware improvements, refer to [Hardware Version 2](https://dcalde11.github.io/09-Hardware%20V.2/version2/).
