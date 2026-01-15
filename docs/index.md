@@ -24,10 +24,12 @@ for<br>
 * Add context that ties into the link to your [team report.](https://embedded-systems-design.github.io/template_report/)
 
 ### My Contribution
-
-* This needs to be updated to reflect a team introduction
-* Content should also help an unfamiliar reader navigate to areas of interest. Information like:
-
-To review the details listed of the material used to construct the subsection, you can review it in the ["BOM"](https://embedded-systems-design.github.io/EGR314DataSheetTemplate/04-BOM/BOM/) section of the datasheet.
-
->Continue for all the remaining/missing sections.
+* To review the details and relationships between the system’s components, refer to the [Block Diagram](https://dcalde11.github.io/01-Block-Diagram/Block-Diagram/).
+* To review the system’s components, refer to the [Component Selection](https://dcalde11.github.io/02-Component-Selection/Component-Selection/).
+* To review the cost of components in the subsystem, refer to the [Bill of Materials](https://dcalde11.github.io/03-BOM/BOM/).
+* To review the layout of the individual subsystem, refer to the [Schematic](https://dcalde11.github.io/04-Schematic/schematic/).
+* To review power distribution, refer to the [Power Budget](https://dcalde11.github.io/05-Power-Budget/Power-Budget/).
+* To review the physical board layout, refer to the [PCB Design](https://dcalde11.github.io/06-PCB/pcb/).
+* To review the firmware implementation, refer to the [Microcontroller Code](https://dcalde11.github.io/07-Micro-Controller%20Code/microcontrollercode/).
+* To review additional references and documentation, refer to the [Resources](https://dcalde11.github.io/08-Resources/resources/).
+* To review proposed hardware improvements, refer to [Hardware Version 2](https://dcalde11.github.io/09-Hardware%20V.2/version2/).
