@@ -31,7 +31,7 @@ project a success.
 * To review the cost of components in the subsystem, refer to the [Bill of Materials](https://dcalde11.github.io/EGR314DonDataSheet/04-BOM/BOM/).
 * To review the layout of the individual subsystem, refer to the [Schematic](https://dcalde11.github.io/EGR314DonDataSheet/05-Schematic/schematic/).
 
-  **PlaceHolders
+## PlaceHolders
 * To review power distribution, refer to the [Power Budget](PlaceLink).
 * To review the physical board layout, refer to the [PCB Design](PlaceLink).
 * To review the firmware implementation, refer to the [Microcontroller Code](PasteLink).
