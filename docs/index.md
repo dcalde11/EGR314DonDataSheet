@@ -15,17 +15,19 @@ for<br>
 </center>
 
 ## Introduction
-As a member of Team 307, my responsibility was/is to ensure everyone stays on track to meet our project deadlines while maintaining a professional tone when enforcing quality standards and espectation. This will
-be accomplished by supporting my teammates with the development of their modulus within the project. Not only that but by managing the schedule by making tough calls on priorities, and sacraficing some deadlines
-for others. While my main subsystem still hasn't been disclosed I look forward to the collaboration this project brings. This record outlines my contributions to the electrical setup and performance that made the
-project a success.
+As a member of Team 307, my responsibility is to ensure everyone stays on track to meet our project deadlines while
+maintaining a professional tone when enforcing quality standards and expectations. This will be accomplished by supporting
+my teammates with the development of their modulus within the project. However not being limited to that but, taking it to
+the extent of making tough calls on priority tasks, and pushing back deadlines to uphold integrity in ourselves and our
+work. While my main subsystem still hasn't been disclosed I look forward to the collaboration this project brings. This
+record outlines my contributions to the electrical setup and performance that made the project a success.
 
 ### Project Summary
 
 * This needs to be updated to reflect <ins>your version</ins> of the team project, so when shared not via the team's report, the reader gets an idea of the direction of the project and how your work will contribute to the overall success.
 * Add context that ties into the link to your [team report.](https://embedded-systems-design.github.io/template_report/)
 
-### My Contribution
+### My Contribution (Future Add ons)
 * To review the details and relationships between the system’s components, refer to the [Block Diagram](https://dcalde11.github.io/EGR314DonDataSheet/02-Block-Diagram/Block-Diagram/).
 * To review the system’s components, refer to the [Component Selection](https://dcalde11.github.io/EGR314DonDataSheet/03-Component-Selection/Component-Selection/).
 * To review the cost of components in the subsystem, refer to the [Bill of Materials](https://dcalde11.github.io/EGR314DonDataSheet/04-BOM/BOM/).
