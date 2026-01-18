@@ -25,7 +25,7 @@ record outlines my contributions to the electrical setup and performance that ma
 ### Project Summary
 
 * This needs to be updated to reflect <ins>your version</ins> of the team project, so when shared not via the team's report, the reader gets an idea of the direction of the project and how your work will contribute to the overall success.
-* Add context that ties into the link to your [team report.](https://embedded-systems-design.github.io/template_report/)
+* Add context that ties into the link to your [307 Team Report.](https://egr-314-team-307-spring-2026.github.io/Team307.github.io/)
 
 ### My Contribution (Future Add ons)
 * To review the details and relationships between the system’s components, refer to the [Block Diagram](https://dcalde11.github.io/EGR314DonDataSheet/02-Block-Diagram/Block-Diagram/).
