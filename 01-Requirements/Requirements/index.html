@@ -825,40 +825,75 @@
   <h1>Module's Requirements</h1>
 
 <h2 id="module-requirements">Module Requirements</h2>
-<p>The following sections document the requirements that the this module need to fulfills to .....</p>
+<p>The table below outlines the key requirements designated to me, compiled from the team’s <a href="https://egr-314-team-307-spring-2026.github.io/Team307.github.io/03-Project-Requirements/Project-requirements/">Project Requirements</a>. My
+responsibility lies in the Motion and Speed Sensing Module of the vehicle. The module itself is responsible for 
+detecting the vehicle’s motion state (also known as the zero state), measuring speed, and identifying obstacles to 
+ensure safe and accurate operation. The table details each requirement along with its description, outlining the 
+minimum threshold necessary for the module to function correctly. Each component is surface-mounted, aside from
+minor components such as resistors and capacitors. This module will operate independently using a surface-mounted
+3.3V switching power regulator and an ESP32 microcontroller as its processing unit. It will utilize sensors such as 
+Hall Effect sensors for speed measurement and distance sensors for obstacle detection, while communicating motion 
+data wirelessly to the system or user interface. The module’s fast reaction time ensures that motion changes are 
+detected and reported promptly, supporting the overall safe operation and control of the vehicle.</p>
 <table>
 <thead>
 <tr>
-<th><strong>Requirement Description</strong></th>
-<th><strong>Measure of<br> Threshold</strong></th>
+<th><strong>Requirement</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Measure of<br> Threshold <br> (Minimum to Pass)</strong></th>
 <th><strong>Target<br>Measure</strong></th>
 <th style="text-align: center;"><strong>Stretch<br>Requirement<br>(Y-N)</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Surface mounted, 3.3V switching power regulatore</td>
+<td>Surface mounted, 3.3V switching power regulator</td>
+<td>Will be used to supply power to the module as it has to work independently as well.</td>
 <td>3.2 Volts</td>
 <td>3.3 Volts</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Surface mounted microcontroller</td>
-<td>1 PIC or ESP</td>
-<td>8-bit PIC</td>
+<td>Surface mounted microcontroller (ESP)</td>
+<td>Will Serve as the "Brain" of the module,</td>
+<td>ESP</td>
+<td>ESP32</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
 <td>Wireless Communication</td>
 <td>Able to send or receive a Wi-Fi data</td>
-<td>Send and receive Wi-Fi Data to MQTT</td>
+<td>Being able to send and get some sort of signal</td>
+<td>Efficiently Send and receive Wi-Fi Data to MQTT</td>
 <td style="text-align: center;">Yes</td>
 </tr>
 <tr>
-<td><em>Rest are items your modules needs to support the task you are covering for the team's device.</em></td>
-<td>---</td>
-<td>---</td>
-<td style="text-align: center;"><strong>NO</strong></td>
+<td>Speed Measurement Sensor (Hall Effect Sensor)</td>
+<td>Measures/estimates the speed of the vehicle in 3D Space</td>
+<td>+/- 10% accuracy</td>
+<td>+/- 5% accuracy</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>Motion Detection</td>
+<td>Detects whether the vehicle is moving, stopped, or changing direction</td>
+<td>Correct State/ Zero State</td>
+<td>Is able to update motion accurately</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>Reaction Time</td>
+<td>Time required for motion changes to be detected and reported</td>
+<td>Less than 2 milliseconds</td>
+<td>Less than 1 millisecond</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>Distance Sensing</td>
+<td>Detects nearby obstacles to inform motion state</td>
+<td>Detects objects within 1 ft</td>
+<td>Detects objects within 2ft with adjustable range</td>
+<td style="text-align: center;">No</td>
 </tr>
 </tbody>
 </table>
