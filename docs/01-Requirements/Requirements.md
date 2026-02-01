@@ -20,6 +20,6 @@ detected and reported promptly, supporting the overall safe operation and contro
 | Surface mounted microcontroller (ESP) | Will Serve as the "Brain" of the module, | ESP | ESP32 | No |
 | Wireless Communication | Able to send or receive a Wi-Fi data |Being able to send and get some sort of signal  | Efficiently Send and receive Wi-Fi Data to MQTT | Yes |
 |Speed Measurement Sensor (Hall Effect Sensor)  |Measures/estimates the speed of the vehicle in 3D Space | +/- 10% accuracy | +/- 5% accuracy |No|
-|Motion Detection|Detects whether the vehicle is moving, stopped, or changing direction | Correct State/ Zero State | Is able to update motion accurately | No |
+|Motion Detection (2 Hall Effect Sensor)|Detects whether the vehicle is moving, stopped, or changing direction | Correct State/ Zero State | Is able to update motion accurately | No |
 |Reaction Time|Time required for motion changes to be detected and reported| Less than 2 milliseconds | Less than 1 millisecond | No |
-|Distance Sensing| Detects nearby obstacles to inform motion state| Detects objects within 1 ft |Detects objects within 2ft with adjustable range | No |
+|Distance Sensing (Ultrasonic, or IR Sensor)| Detects nearby obstacles to inform motion state| Detects objects within 1 ft |Detects objects within 2ft with adjustable range | No |
