@@ -5,17 +5,35 @@ tags:
 - tag2
 ---
 
-## Overview
-This needs to be updated with a brief purpose for having the block diagram.
-Things to mention are:
-* power levels
-* sensor
-* Actuator
-* team connections
-* Power source
-* ...
+## Block Diagram Overview
 
-To get some initial formatting help, one can view ["here"](https://embedded-systems-design.github.io/EGR304DataSheetTemplate/Appendix/basic-markdown-examples/) some basic techniques.
+This block diagram illustrates the overall system architecture centered around the PIC18F47Q42 microcontroller. It shows how power is supplied and regulated, how Hall effect sensors provide input data, how LEDs are used as visual indicators, and how the subsystem interfaces with other team components and programming hardware.
+
+---
+
+## System Breakdown
+
+### Power Source
+- 9V alkaline battery provides the primary power input.
+- Battery connects to the system through a snap-style battery connector.
+
+### Power Levels
+- A buck voltage regulator converts the 9V battery voltage down to **3.3V**.
+- The 3.3V rail powers the microcontroller, Hall effect sensors, and LED indicators.
+
+### Sensors
+- Two Hall effect sensors are used to detect magnetic fields.
+- Sensors communicate with the microcontroller using **digital I²C serial communication**.
+- Sensor data is read and processed by the PIC18F47Q42.
+
+### Actuators
+- RGBW LEDs are used as visual indicators.
+- LEDs are driven by **digital GPIO output pins**.
+- LED states indicate when Hall effect sensor readings have been detected and processed.
+
+### Team Connections
+- Upstream and downstream headers provide interfaces to other team subsystems.
+- These connections allow system integration while avoiding duplicated functionality across team members.
 
 
 ## Example Block Diagram 
