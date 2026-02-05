@@ -18,25 +18,22 @@ This block diagram illustrates the overall system architecture centered around t
 - Battery connects to the system through a snap-style battery connector.
 
 ### Power Levels
-- A buck voltage regulator converts the 9V battery voltage down to **3.3V**.
+- A buck voltage regulator converts the 9V battery voltage down to 3.3V.
 - The 3.3V rail powers the microcontroller, Hall effect sensors, and LED indicators.
 
 ### Sensors
 - Two Hall effect sensors are used to detect magnetic fields.
-- Sensors communicate with the microcontroller using **digital I²C serial communication**.
+- Sensors communicate with the microcontroller using digital I²C serial communication.
 - Sensor data is read and processed by the PIC18F47Q42.
 
 ### Actuators
 - RGBW LEDs are used as visual indicators.
-- LEDs are driven by **digital GPIO output pins**.
+- LEDs are driven by digital GPIO output pins.
 - LED states indicate when Hall effect sensor readings have been detected and processed.
 
 ### Team Connections
 - Upstream and downstream headers provide interfaces to other team subsystems.
 - These connections allow system integration while avoiding duplicated functionality across team members.
 
-
-## Example Block Diagram 
-Showing an example of how to import a screenshot of the block diagram created outside of git and brought into a page.
 
 ![Individual Block Diagram](https://github.com/dcalde11/EGR314DonDataSheet/raw/a509418d56f460ab2f5f93befa5f674fc9e85620/docs/02-Block-Diagram/314BD3.drawio.png)
