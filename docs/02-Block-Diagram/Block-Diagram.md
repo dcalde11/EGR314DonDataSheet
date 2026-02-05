@@ -39,4 +39,4 @@ This block diagram illustrates the overall system architecture centered around t
 ## Example Block Diagram 
 Showing an example of how to import a screenshot of the block diagram created outside of git and brought into a page.
 
-![Indivial Block diagram ](https://github.com/dcalde11/EGR314DonDataSheet/blob/84caaf49211ccc58cadec7522eb6ced770bd8984/docs/02-Block-Diagram/314BlockDiagram.drawio.png)
+![Indivial Block diagram ](https://github.com/dcalde11/EGR314DonDataSheet/blob/ac35b809e16ddd8e1709215a124696430a428d2a/docs/02-Block-Diagram/314BD3.drawio.png)
