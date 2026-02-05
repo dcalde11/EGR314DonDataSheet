@@ -24,7 +24,7 @@ This block diagram illustrates the overall system architecture centered around t
 ### Sensors
 - Two Hall effect sensors are used to detect magnetic fields.
 - Sensors communicate with the microcontroller using digital I²C serial communication.
-- Sensor data is read and processed by the PIC18F47Q42.
+- Sensor data is read and processed by the PIC18F47K42.
 
 ### Actuators
 - RGBW LEDs are used as visual indicators.
