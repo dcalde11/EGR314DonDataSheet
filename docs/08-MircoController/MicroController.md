@@ -11,7 +11,7 @@ For this project, I set up the **PIC18F57Q43** in MPLabX using MCC Melody. I ena
 - **GPIO** for status LEDs.  
 - **ICSP** for programming and debugging the chip directly on the board.  
 
-All the pins I used are conflict-free. The **MCLR/RE3 pin** is reserved for ICSP, which is normal — it’s basically needed to program and reset the PIC. The chip has **128 KB of flash** and **8 KB of RAM**, which is way more than we need right now, so there’s plenty of room if we want to expand the project later. The MCC build went through with no errors, so everything seems to work properly.  
+All the pins I used are conflict-free. The MCLR/RE3 pin is reserved for ICSP, which is normal — it’s basically needed to program and reset the PIC. The chip has 128 KB of flash and 8 KB of RAM, which is way more than we need right now, so there’s plenty of room if we want to expand the project later. The MCC build went through with no errors, so everything seems to work properly.  
 
 ---
 
