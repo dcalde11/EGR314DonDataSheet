@@ -11,6 +11,8 @@ title: Module's Selected Major Components
 ### Options Considered
 
 #### Option 1: AS5600L-ASOM SOIC8 LF T&RDP
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/8a1ebea2-7ca5-44f9-b6c6-1774d983e67b" />
+
 - **Price:** $3.20/unit  
 - **Product Link:** [AS5600L-ASOM on DigiKey](https://www.digikey.com/en/products/detail/ams-osram-usa-inc/AS5600L-ASOM-SOIC8-LF-T-RDP/10324317)  
 - **Datasheet:** [AS5600 Datasheet](https://www.digikey.com/htmldatasheets/production/1647438/0/0/1/as5600-datasheet.pdf)  
@@ -22,6 +24,8 @@ title: Module's Selected Major Components
 | Easy to install | Hard to get readings |
 
 #### Option 2: AS5048A-HTSP-500
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/046b84b0-2fc0-4362-bee1-dacb8670e817" />
+
 - **Price:** $7.90/unit  
 - **Product Link:** [AS5048A on DigiKey](https://www.digikey.com/en/products/detail/ams-osram-usa-inc/AS5048A-HTSP-500/3188615)  
 - **Datasheet:** [AS5048A Datasheet](https://look.ams-osram.com/m/287d7ad97d1ca22e/original/AS5048-DS000298.pdf)  
@@ -33,6 +37,8 @@ title: Module's Selected Major Components
 | Easy to install | More expensive |
 
 #### Option 3: A3212ELHLT-T
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/c515c5e1-c8d8-4a31-8d23-9ebcba874783" />
+
 - **Price:** $0.53/unit  
 - **Product Link:** [A3212ELHLT-T on DigiKey](https://www.digikey.com/en/products/detail/allegro-microsystems/A3212ELHLT-T/1006614)  
 - **Datasheet:** [A3212 Datasheet](https://www.allegromicro.com/~/media/Files/Datasheets/A3211-12-Datasheet.ashx)  
@@ -52,6 +58,8 @@ title: Module's Selected Major Components
 ## 2. Power Regulation
 
 ### Option 1: TLV73312PDBVR
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/8a91c22b-b99c-43a8-9a07-9cd02a98f67d" />
+
 - **Price:** $0.17/unit  
 - **Product Link:** [TLV73312PDBVR on DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/TLV73312PDBVR/5022371)  
 - **Datasheet:** [TLV73312 Datasheet](https://www.alldatasheet.com/datasheet-pdf/download/2205575/TI2/TLV73312PDBVR.html)  
@@ -63,6 +71,8 @@ title: Module's Selected Major Components
 | Easy to install | — |
 
 ### Option 2: LP38511MRX-ADJ/NOPB
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/8a2c37bb-ea94-447d-a0be-842722ccb03b" />
+
 - **Price:** $1.89/unit  
 - **Product Link:** [LP38511MRX on DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/LP38511MRX-ADJ-NOPB/2075502)  
 - **Datasheet:** [LP38511MRX Datasheet](https://www.ti.com/lit/ds/symlink/lp38511-adj.pdf)  
@@ -74,6 +84,8 @@ title: Module's Selected Major Components
 | Accurate | Thermal management required |
 
 ### Option 3: LP38511TJ-ADJ/NOPB
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/99ae5960-4966-4fa2-a424-29bc71ba8d54" />
+
 - **Price:** $1.89/unit  
 - **Product Link:** [LP38511TJ on DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/LP38511TJ-ADJ-NOPB/2023099)  
 - **Datasheet:** [LP38511TJ Datasheet](https://www.ti.com/lit/gpn/lp38511-adj)  
@@ -94,6 +106,8 @@ title: Module's Selected Major Components
 ## 3. LED Indicators
 
 ### Option 1: QBLP679-RGBCW
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/d3756ca3-e984-466d-b36e-d0bd965d8457" />
+
 - **Price:** $0.76/unit  
 - **Product Link:** [QBLP679-RGBCW on DigiKey](https://www.digikey.com/en/products/detail/qt-brightek-qtb/QBLP679-RGBCW/13278847)  
 - **Datasheet:** [QBLP679 Datasheet](https://www.qt-brightek.com/datasheet/QBLP679-RGBXW.pdf)  
@@ -106,6 +120,8 @@ title: Module's Selected Major Components
 | Accurate | Thermal management |
 
 ### Option 2: LTST-C190GKT
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/cbcbfd02-84c5-4eaf-8d4e-b25b22c191c2" />
+
 - **Price:** $0.14/unit  
 - **Product Link:** [LTST-C190GKT on DigiKey](https://www.digikey.com/en/products/detail/liteon/LTST-C190GKT/269230)  
 - **Datasheet:** [LTST-C190GKT Datasheet](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/858/LTST-C190GKT.pdf)  
@@ -118,6 +134,8 @@ title: Module's Selected Major Components
 | Visible | — |
 
 ### Option 3: IN-P55QSTGRGBW
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/a9aaf32f-94c0-48c3-a0d4-bc4c70438904" />
+
 - **Price:** $1.19/unit  
 - **Product Link:** [IN-P55QSTGRGBW on DigiKey](https://www.digikey.com/en/products/detail/inolux/IN-P55QSTGRGBW/14555727)  
 - **Datasheet:** [IN-P55 Datasheet](https://www.inolux-corp.com/datasheet/SMDLED/RGBW%20Top%20View/IN-P55QSTGRGBW_V1.0.pdf)  
@@ -138,6 +156,8 @@ title: Module's Selected Major Components
 ## 4. Barrel Jack / Jumpers
 
 ### Option 1: PJ-006A-SMT-TR
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/7322b12c-4f87-4b09-8c01-1bb6030f3f31" />
+
 - **Price:** $0.95/unit  
 - **Product Link:** [PJ-006A-SMT-TR on DigiKey](https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/PJ-006A-SMT-TR/408456)  
 - **Datasheet:** [PJ-006A Datasheet](https://www.sameskydevices.com/product/resource/pj-006a-smt.pdf)  
@@ -149,6 +169,8 @@ title: Module's Selected Major Components
 | Easy to install | Must ensure correct polarity |
 
 ### Option 2: PJ-006B-SMT-TR
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/8378c194-9761-4f94-acf5-dcb0bdc55573" />
+
 - **Price:** $0.95/unit  
 - **Product Link:** [PJ-006B-SMT-TR on DigiKey](https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/PJ-006B-SMT-TR/408457)  
 - **Datasheet:** [PJ-006B Datasheet](https://www.sameskydevices.com/product/resource/pj-006b-smt.pdf)  
@@ -160,6 +182,8 @@ title: Module's Selected Major Components
 | Easy to install | Must ensure correct polarity |
 
 ### Option 3: FC68148S (Jumper)
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/39e5d7df-acec-4e3a-a7b0-95753e67676d" />
+
 - **Price:** $1.55/unit  
 - **Product Link:** [FC68148S on DigiKey](https://www.digikey.com/en/products/detail/cliff-electronic-components-ltd/FC68148S/20374233)  
 - **Datasheet:** [FC68148S Datasheet](https://www.cliffuk.co.uk/products/dcconnectors/FC68148S.pdf)  
@@ -179,16 +203,26 @@ title: Module's Selected Major Components
 ## 5. Resistors and Capacitors
 
 ### Selected Resistor
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/db28723b-d099-41ba-8cf4-d1f2f23a67bb" />
+
+
 - **Component:** ERA-6AEB472V  
 - **Price:** $0.10/unit  
 - **Description:** 4.7 kΩ ±0.1% 0.125W 0805 Automotive AEC-Q200 Thin Film  
-- **Datasheet:** [ERA-6AEB472V Datasheet](https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf)  
+- **Datasheet:** [ERA-6AEB472V Datasheet](https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf)
+- **Link:** [DigiKey Product Page](https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERA-6AEB472V/1465765)
+
+
+ 
 
 ### Selected Capacitor
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/81d06c28-9c3a-459e-b5a1-3b1e73eb52c9" />
+
 - **Component:** GRM033R61A104KE15D  
 - **Price:** $0.08/unit  
 - **Description:** 0.1 µF ±10% 10V X5R 0201 Ceramic Capacitor  
-- **Datasheet:** [GRM033R61A104KE15D Datasheet](https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM033R61A104KE15-01A.pdf)  
+- **Datasheet:** [GRM033R61A104KE15D Datasheet](https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM033R61A104KE15-01A.pdf) 
+-  **Link:** [DigiKey Product Page](https://www.digikey.com/en/products/detail/murata-electronics/GRM033R61A104KE15D/2269163) 
 
 ---
 
@@ -201,4 +235,4 @@ title: Module's Selected Major Components
 | LED Indicator | LTST-C190GKT | Simple control, low power, SMT, cost-effective |
 | Barrel Jack / Jumpers | PJ-006A-SMT-TR + FC68148S | Standard barrel jack, SMT, allows bus/jack disconnect, robust |
 | Resistor | ERA-6AEB472V | SMT 0805, precise value, automotive grade |
-| Capacitor | GRM033R61A104KE15D | SMT 0201, suitable voltage, stable X5R dielectric |
+| Capacitor | GRM033R61A104KE15D | SMT 0201, suitable voltage,  |
