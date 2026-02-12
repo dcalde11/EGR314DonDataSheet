@@ -51,7 +51,7 @@ title: Module's Selected Major Components
 
 ### Selected Sensor
 - **Component:** AS5600L-ASOM  
-- **Rationale:** SMT package, I2C interface, sufficient resolution (~12-bit) for vehicle motion/speed detection, easy implementation, cost-effective (~$3.20/unit).  
+- **Rationale:** SMT package, I2C interface, sufficient resolution (12-bit) for vehicle motion/speed detection, easy implementation, cost-effective ($3.20/unit).  
 
 ---
 
@@ -99,7 +99,7 @@ title: Module's Selected Major Components
 
 ### Selected Regulator
 - **Component:** TLV73312PDBVR  
-- **Rationale:** Fixed 3.3V, low dropout, SMT, sufficient current (250 mA), cost-effective (~$0.17/unit), reduces design complexity.  
+- **Rationale:** Fixed 3.3V, low dropout, SMT, sufficient current (250 mA), cost-effective ($0.17/unit), reduces design complexity.  
 
 ---
 
@@ -149,7 +149,7 @@ title: Module's Selected Major Components
 
 ### Selected LED
 - **Component:** LTST-C190GKT  
-- **Rationale:** Single-color, SMT, simple interface, low power, cost-effective (~$0.14/unit), ideal for basic vehicle motion/status indication.  
+- **Rationale:** Single-color, SMT, simple interface, low power, cost-effective ($0.14/unit), ideal for basic vehicle motion/status indication.  
 
 ---
 
@@ -196,7 +196,7 @@ title: Module's Selected Major Components
 
 ### Selected Barrel Jack / Jumpers
 - **Components:** PJ-006A-SMT-TR + FC68148S  
-- **Rationale:** Standard barrel jack, SMT, allows bus/jack disconnect, robust, easy to integrate; cost-effective (~$0.95 + $1.55/unit).  
+- **Rationale:** Standard barrel jack, SMT, allows bus/jack disconnect, robust, easy to integrate; cost-effective ($0.95 + $1.55/unit).  
 
 ---
 
