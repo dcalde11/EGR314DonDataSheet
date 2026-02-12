@@ -30,6 +30,8 @@ record outlines my contributions to the electrical setup and performance that ma
 ### My Contribution (Future Add ons)
 * To review the details and relationships between the system’s components, refer to the [Block Diagram](https://dcalde11.github.io/EGR314DonDataSheet/02-Block-Diagram/Block-Diagram/).
 * To review the system’s components, refer to the [Component Selection](https://dcalde11.github.io/EGR314DonDataSheet/03-Component-Selection/Component-Selection/).
+* To review the firmware implementation, refer to the [Microcontroller Code](https://dcalde11.github.io/EGR314DonDataSheet/08-MircoController/MicroController/).
+*  To review power distribution, refer to the [Power Budget](https://dcalde11.github.io/EGR314DonDataSheet/09-Power-Budget/Power-Budget/).
 * To review the cost of components in the subsystem, refer to the [Bill of Materials](https://dcalde11.github.io/EGR314DonDataSheet/04-BOM/BOM/).
 * To review the layout of the individual subsystem, refer to the [Schematic](https://dcalde11.github.io/EGR314DonDataSheet/05-Schematic/schematic/).
 
