@@ -36,8 +36,8 @@ record outlines my contributions to the electrical setup and performance that ma
 * To review the layout of the individual subsystem, refer to the [Schematic](https://dcalde11.github.io/EGR314DonDataSheet/05-Schematic/schematic/).
 
 ## PlaceHolders
-* To review power distribution, refer to the [Power Budget](PlaceLink).
+
 * To review the physical board layout, refer to the [PCB Design](PlaceLink).
-* To review the firmware implementation, refer to the [Microcontroller Code](PasteLink).
+
 * To review additional references and documentation, refer to the [Resources](PasteLink).
 * To review proposed hardware improvements, refer to [Hardware Version 2](https://dcalde11.github.io/09-Hardware%20V.2/version2/).
