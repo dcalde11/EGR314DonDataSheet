@@ -36,7 +36,8 @@ Here’s a breakdown of the pins we’re using for each peripheral:
 
 ## PIC18F57Q43 Pin Images
 
-![Pin Diagram V1](https://github.com/dcalde11/EGR314DonDataSheet/blob/7e4cc75ec84d7676e4f79e94945d64bcff31ff7c/docs/03-Component-Selection/PINSS.png)  
+![Pin Diagram](https://raw.githubusercontent.com/dcalde11/EGR314DonDataSheet/a67084c9d3d6aa6c7e49bd3d9a57a410ac671713/docs/08-MircoController/PINSS.png)
+
 ![Pin Diagram V2](https://github.com/dcalde11/EGR314DonDataSheet/blob/7e4cc75ec84d7676e4f79e94945d64bcff31ff7c/docs/03-Component-Selection/PINSSV2.png)  
 
 ---
