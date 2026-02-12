@@ -51,7 +51,7 @@ title: Module's Selected Major Components
 
 ### Selected Sensor
 - **Component:** AS5600L-ASOM  
-- **Rationale:** SMT package, I2C interface, sufficient resolution (12-bit) for vehicle motion/speed detection, easy implementation, cost-effective ($3.20/unit).  
+- **Rationale:** SMT package, I2C interface, sufficient resolution (12-bit) for vehicle motion/speed detection, easy implementation, cost-effective ($3.20/unit). This sensor also integrates smoothly with our MCC I2C setup and allows for quick debugging using standard libraries. Its robustness ensures stable readings even in a compact 3D motion sensing setup.
 
 ---
 
@@ -99,7 +99,7 @@ title: Module's Selected Major Components
 
 ### Selected Regulator
 - **Component:** TLV73312PDBVR  
-- **Rationale:** Fixed 3.3V, low dropout, SMT, sufficient current (250 mA), cost-effective ($0.17/unit), reduces design complexity.  
+- **Rationale:** Fixed 3.3V, low dropout, SMT, sufficient current (250 mA), cost-effective ($0.17/unit), reduces design complexity. This regulator is compact enough to fit the board layout easily and provides stable voltage for both the MCU and sensors. Its simple design minimizes potential noise in sensitive I2C and ADC readings.
 
 ---
 
@@ -149,7 +149,7 @@ title: Module's Selected Major Components
 
 ### Selected LED
 - **Component:** LTST-C190GKT  
-- **Rationale:** Single-color, SMT, simple interface, low power, cost-effective ($0.14/unit), ideal for basic vehicle motion/status indication.  
+- **Rationale:** Single-color, SMT, simple interface, low power, cost-effective ($0.14/unit), ideal for basic vehicle motion/status indication. These LEDs are easy to integrate with PWM testing, and their low power draw ensures they won’t stress the 3.3V regulator. They also offer consistent brightness even with varying supply voltage, which is critical for accurate visual feedback.
 
 ---
 
@@ -196,7 +196,7 @@ title: Module's Selected Major Components
 
 ### Selected Barrel Jack / Jumpers
 - **Components:** PJ-006A-SMT-TR + FC68148S  
-- **Rationale:** Standard barrel jack, SMT, allows bus/jack disconnect, robust, easy to integrate; cost-effective ($0.95 + $1.55/unit).  
+- **Rationale:** Standard barrel jack, SMT, allows bus/jack disconnect, robust, easy to integrate; cost-effective ($0.95 + $1.55/unit). Using both ensures flexible power distribution, while the jumper allows optional isolation of circuits for testing. The combination also minimizes PCB redesign if future expansion is needed.
 
 ---
 
@@ -205,15 +205,12 @@ title: Module's Selected Major Components
 ### Selected Resistor
 <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/db28723b-d099-41ba-8cf4-d1f2f23a67bb" />
 
-
 - **Component:** ERA-6AEB472V  
 - **Price:** $0.10/unit  
 - **Description:** 4.7 kΩ ±0.1% 0.125W 0805 Automotive AEC-Q200 Thin Film  
-- **Datasheet:** [ERA-6AEB472V Datasheet](https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf)
-- **Link:** [DigiKey Product Page](https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERA-6AEB472V/1465765)
-
-
- 
+- **Datasheet:** [ERA-6AEB472V Datasheet](https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf)  
+- **Link:** [DigiKey Product Page](https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERA-6AEB472V/1465765)  
+- **Rationale:** SMT 0805, precise value, automotive grade. It offers high stability under temperature variations and is ideal for reference or pull-up resistors in the I2C and ADC circuits. Its thin-film design reduces noise and improves signal accuracy.
 
 ### Selected Capacitor
 <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/81d06c28-9c3a-459e-b5a1-3b1e73eb52c9" />
@@ -221,8 +218,9 @@ title: Module's Selected Major Components
 - **Component:** GRM033R61A104KE15D  
 - **Price:** $0.08/unit  
 - **Description:** 0.1 µF ±10% 10V X5R 0201 Ceramic Capacitor  
-- **Datasheet:** [GRM033R61A104KE15D Datasheet](https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM033R61A104KE15-01A.pdf) 
--  **Link:** [DigiKey Product Page](https://www.digikey.com/en/products/detail/murata-electronics/GRM033R61A104KE15D/2269163) 
+- **Datasheet:** [GRM033R61A104KE15D Datasheet](https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM033R61A104KE15-01A.pdf)  
+- **Link:** [DigiKey Product Page](https://www.digikey.com/en/products/detail/murata-electronics/GRM033R61A104KE15D/2269163)  
+- **Rationale:** SMT 0201, suitable voltage, compact and ideal for decoupling near the MCU. Its low ESR and X5R dielectric ensure stable power to sensitive analog circuits and reduce noise in I2C lines.
 
 ---
 
@@ -230,9 +228,65 @@ title: Module's Selected Major Components
 
 | Subsystem | Selected Component | Rationale |
 |-----------|------------------|-----------|
-| Motion / Speed Sensor | AS5600L-ASOM | SMT, I2C interface, sufficient resolution, easy implementation, cost-effective |
-| 3.3V Regulator | TLV73312PDBVR | Fixed 3.3V, low dropout, SMT, sufficient current, inexpensive |
-| LED Indicator | LTST-C190GKT | Simple control, low power, SMT, cost-effective |
-| Barrel Jack / Jumpers | PJ-006A-SMT-TR + FC68148S | Standard barrel jack, SMT, allows bus/jack disconnect, robust |
-| Resistor | ERA-6AEB472V | SMT 0805, precise value, automotive grade |
-| Capacitor | GRM033R61A104KE15D | SMT 0201, suitable voltage,  |
+| Motion / Speed Sensor | AS5600L-ASOM | SMT, I2C interface, sufficient resolution, easy implementation, cost-effective. Integrates well with MCC I2C and allows quick debugging. Robust and stable for compact 3D sensing. |
+| 3.3V Regulator | TLV73312PDBVR | Fixed 3.3V, low dropout, SMT, sufficient current, inexpensive. Compact, stable voltage, minimal noise for I2C/ADC. |
+| LED Indicator | LTST-C190GKT | Simple control, low power, SMT, cost-effective. Works well with PWM, low draw, consistent brightness. |
+| Barrel Jack / Jumpers | PJ-006A-SMT-TR + FC68148S | Standard barrel jack, SMT, allows bus/jack disconnect, robust. Flexible power routing, optional circuit isolation for testing. |
+| Resistor | ERA-6AEB472V | SMT 0805, precise value, automotive grade. Stable under temperature variation, low noise. |
+| Capacitor | GRM033R61A104KE15D | SMT 0201, suitable voltage. Ideal for decoupling, low ESR, reduces I2C noise. |
+
+---
+
+# PIC18F57Q43 MCC Configuration and Microcontroller Choice
+
+## MPLabX & MCC Setup
+
+For this project, I set up the **PIC18F57Q43** in MPLabX using MCC Melody. I enabled all the peripherals we need:  
+
+- **EUSART1** for UART, so we can debug and send info to the team.  
+- **MSSP1** in I2C master mode for talking to the AS5600 Hall effect sensor.  
+- **PWM1_16BIT** to control LEDs and check sensor readings visually.  
+- **ADC** on RA0, in case we want to add analog sensors later.  
+- **GPIO** for status LEDs.  
+- **ICSP** for programming and debugging the chip directly on the board.  
+
+All the pins I used are conflict-free. The **MCLR/RE3 pin** is reserved for ICSP, which is normal — it’s basically needed to program and reset the PIC. The chip has **128 KB of flash** and **8 KB of RAM**, which is way more than we need right now, so there’s plenty of room if we want to expand the project later. The MCC build went through with no errors, so everything seems to work properly.  
+
+---
+
+## Pin Assignments
+
+Here’s a breakdown of the pins we’re using for each peripheral:
+
+| Function       | Peripheral     | Pin   | Notes                     |
+|----------------|---------------|-------|---------------------------|
+| UART TX        | EUSART1       | RC6   | Debugging / team comm     |
+| UART RX        | EUSART1       | RC7   | Debugging / team comm     |
+| I2C SCL        | MSSP1         | RC3   | AS5600 clock line         |
+| I2C SDA        | MSSP1         | RC4   | AS5600 data line          |
+| PWM LED        | PWM1_16BIT    | RC2   | Visual check for sensors  |
+| Status LED GPIO| GPIO          | RA2   | General status indicator  |
+| ADC Input      | ADC           | RA0   | Optional analog input     |
+| MCLR           | ICSP          | RE3   | Reserved for ICSP/program |
+
+ MCLR/RE3 is “exclusively acquired” by the ICSP module.
+
+---
+
+## PIC18F57Q43 Pin Images
+
+![Pin Diagram V1](https://github.com/dcalde11/EGR314DonDataSheet/blob/7e4cc75ec84d7676e4f79e94945d64bcff31ff7c/docs/03-Component-Selection/PINSS.png)  
+![Pin Diagram V2](https://github.com/dcalde11/EGR314DonDataSheet/blob/7e4cc75ec84d7676e4f79e94945d64bcff31ff7c/docs/03-Component-Selection/PINSSV2.png)  
+
+---
+
+## Final Microcontroller Choice
+
+**Chosen MCU:** PIC18F57Q43 (Surface Mount)
+
+### Why I Picked It
+
+I chose the PIC18F57Q43 because it has all the peripherals we need built-in, including UART, I2C, PWM, ADC, and GPIO, which makes the design and programming easier. It has over 32 I/O pins, providing room for LEDs, sensors, and potential 
+future expansions, such as a second connector. It has roughly 128 KB of flash and 8 KB of RAM, meaning that memory limitations won’t be a concern for our project. Its 64 MHz HFINTOSC clock ensures smooth PWM, fast I2C communication, and stable 
+UART performance. The on-chip ICSP support allows us to program and debug the microcontroller without removing it from the board, like the snap tool we have been using for the PIC18F47K42. Additionally, the PIC18F57Q43 comes in both surface 
+mount and DIP packages, making prototyping flexible. Finally, full MCC Melody support ensures that code generation and peripheral configuration are quick and reliable.
