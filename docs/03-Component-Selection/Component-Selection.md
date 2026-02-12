@@ -2,64 +2,203 @@
 title: Module's Selected Major Components
 ---
 
-## Module's Selected Major Components
+# Part 1: Major Component Selections
 
-The following sections are the selected major components necessary for  .....
+---
 
->**For each of the following sections, use <ins>one of the two styles</ins> given near the end. *REMOVE THIS NOTE***
+## 1. Hall Effect Sensor (Motion & Speed Sensing)
 
-### Power Management
+### Options Considered
 
-(**remove this note/placeholder**: this is where your 3.3 volt switching regulator, any other needed power regulator, and power source {if applicable} **THAT WERE SELECTED**)
+#### Option 1: AS5600L-ASOM SOIC8 LF T&RDP
+- **Price:** $3.20/unit  
+- **Product Link:** [AS5600L-ASOM on DigiKey](https://www.digikey.com/en/products/detail/ams-osram-usa-inc/AS5600L-ASOM-SOIC8-LF-T-RDP/10324317)  
+- **Datasheet:** [AS5600 Datasheet](https://www.digikey.com/htmldatasheets/production/1647438/0/0/1/as5600-datasheet.pdf)  
 
-For more details, review the ["Appendix - Component Selection Process - Power Mangement"](https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/01-Componet-Selection/Component-Selection-Process/#power-management) selection.
+| Pros | Cons |
+|------|------|
+| Inexpensive | Slow shipping |
+| Compatible with PSoC | Shipping fee |
+| Easy to install | Hard to get readings |
 
-### Sensor
+#### Option 2: AS5048A-HTSP-500
+- **Price:** $7.90/unit  
+- **Product Link:** [AS5048A on DigiKey](https://www.digikey.com/en/products/detail/ams-osram-usa-inc/AS5048A-HTSP-500/3188615)  
+- **Datasheet:** [AS5048A Datasheet](https://look.ams-osram.com/m/287d7ad97d1ca22e/original/AS5048-DS000298.pdf)  
 
-(**remove this note/placeholder**: if applicable, this is where your  **SELECTED** sensor is shown. Otherwise, remove this section.)
+| Pros | Cons |
+|------|------|
+| More precise than AS5600 | SPI communication required |
+| Direction detection possible | Requires precise magnet alignment |
+| Easy to install | More expensive |
 
-For more details, review the ["Appendix - Component Selection Process - Sensor"](https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/01-Componet-Selection/Component-Selection-Process/#sensor) selection.
+#### Option 3: A3212ELHLT-T
+- **Price:** $0.53/unit  
+- **Product Link:** [A3212ELHLT-T on DigiKey](https://www.digikey.com/en/products/detail/allegro-microsystems/A3212ELHLT-T/1006614)  
+- **Datasheet:** [A3212 Datasheet](https://www.allegromicro.com/~/media/Files/Datasheets/A3211-12-Datasheet.ashx)  
 
-### Actuator
+| Pros | Cons |
+|------|------|
+| Controlled magnet orientation | Requires north/south pole switching |
+| Direction detection possible | Requires precise magnet alignment |
+| Easy to install | Detects either pole |
 
-(**remove this note/placeholder**: if applicable, this is where your **Selected** the actuator items go, which includes both the driver and motor. Otherwise, remove this section.)
+### Selected Sensor
+- **Component:** AS5600L-ASOM  
+- **Rationale:** SMT package, I2C interface, sufficient resolution (~12-bit) for vehicle motion/speed detection, easy implementation, cost-effective (~$3.20/unit).  
 
-For more details, review the ["Appendix - Component Selection Process - Actuator"](https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/01-Componet-Selection/Component-Selection-Process/#actuator) selection.
+---
 
------------
-> Remove the following before submitting! Use them to present the selected components
+## 2. Power Regulation
 
-### Style 1
+### Option 1: TLV73312PDBVR
+- **Price:** $0.17/unit  
+- **Product Link:** [TLV73312PDBVR on DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/TLV73312PDBVR/5022371)  
+- **Datasheet:** [TLV73312 Datasheet](https://www.alldatasheet.com/datasheet-pdf/download/2205575/TI2/TLV73312PDBVR.html)  
 
-> This is the example found in the assignment, uses more html
+| Pros | Cons |
+|------|------|
+| Low dropout | Generates heat at high Vin |
+| Fixed 3.3V output | Limited to 250mA |
+| Easy to install | — |
 
-*Table 1: Example component selection*
+### Option 2: LP38511MRX-ADJ/NOPB
+- **Price:** $1.89/unit  
+- **Product Link:** [LP38511MRX on DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/LP38511MRX-ADJ-NOPB/2075502)  
+- **Datasheet:** [LP38511MRX Datasheet](https://www.ti.com/lit/ds/symlink/lp38511-adj.pdf)  
 
-**External Clock Module**
+| Pros | Cons |
+|------|------|
+| High output current | Converts excess voltage to heat |
+| Adjustable output voltage | Requires external resistors |
+| Accurate | Thermal management required |
 
-| **Component**                                                                                                                                                                                      | **Pros**                                                                                                                                    | **Cons**                                                                                            |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| ![](image1.png)<br> XC1259TR-ND surface mount crystal<br>$1/each<br>[link to product](http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366)                 | \* Inexpensive[^1]<br>\* Compatible with PSoC<br>\* Meets surface mount constraint of project                                               | \* Requires external components and support circuitry for interface<br>\* Needs special PCB layout. |
+### Option 3: LP38511TJ-ADJ/NOPB
+- **Price:** $1.89/unit  
+- **Product Link:** [LP38511TJ on DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/LP38511TJ-ADJ-NOPB/2023099)  
+- **Datasheet:** [LP38511TJ Datasheet](https://www.ti.com/lit/gpn/lp38511-adj)  
 
-**Rationale:** A clock oscillator is easier ....
+| Pros | Cons |
+|------|------|
+| High output current | Converts excess voltage to heat |
+| Low dropout voltage | Adjustable voltage adds complexity |
+| Adjustable output | Requires external resistors |
+| Accurate | Thermal management required |
 
-### Style 2
+### Selected Regulator
+- **Component:** TLV73312PDBVR  
+- **Rationale:** Fixed 3.3V, low dropout, SMT, sufficient current (250 mA), cost-effective (~$0.17/unit), reduces design complexity.  
 
-> Also acceptable, more markdown friendly
+---
 
-**External Clock Module**
+## 3. LED Indicators
 
-1. XC1259TR-ND surface mount crystal
+### Option 1: QBLP679-RGBCW
+- **Price:** $0.76/unit  
+- **Product Link:** [QBLP679-RGBCW on DigiKey](https://www.digikey.com/en/products/detail/qt-brightek-qtb/QBLP679-RGBCW/13278847)  
+- **Datasheet:** [QBLP679 Datasheet](https://www.qt-brightek.com/datasheet/QBLP679-RGBXW.pdf)  
 
-    ![](image1.png)
+| Pros | Cons |
+|------|------|
+| High brightness | Higher cost |
+| Multiple channels | Higher complexity |
+| Reduces number of LEDs | Requires multiple GPIOs |
+| Accurate | Thermal management |
 
-    * $1/each
-    * [link to product](http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366)
+### Option 2: LTST-C190GKT
+- **Price:** $0.14/unit  
+- **Product Link:** [LTST-C190GKT on DigiKey](https://www.digikey.com/en/products/detail/liteon/LTST-C190GKT/269230)  
+- **Datasheet:** [LTST-C190GKT Datasheet](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/858/LTST-C190GKT.pdf)  
 
-    | Pros                                      | Cons                                                             |
-    | ----------------------------------------- | ---------------------------------------------------------------- |
-    | Inexpensive                               | Requires external components and support circuitry for interface |
-    | Compatible with PSoC                      | Needs special PCB layout.                                        |
-    | Meets surface mount constraint of project |
+| Pros | Cons |
+|------|------|
+| Small footprint | Single color |
+| Simple interface | Controlled by MCU pin |
+| Low power consumption | Requires external resistor |
+| Visible | — |
 
-**Rationale:** A clock oscillator is easier ...
+### Option 3: IN-P55QSTGRGBW
+- **Price:** $1.19/unit  
+- **Product Link:** [IN-P55QSTGRGBW on DigiKey](https://www.digikey.com/en/products/detail/inolux/IN-P55QSTGRGBW/14555727)  
+- **Datasheet:** [IN-P55 Datasheet](https://www.inolux-corp.com/datasheet/SMDLED/RGBW%20Top%20View/IN-P55QSTGRGBW_V1.0.pdf)  
+
+| Pros | Cons |
+|------|------|
+| High brightness | Higher voltage input |
+| Multiple channels | Higher complexity |
+| Reduces number of LEDs | Requires multiple GPIOs |
+| Accurate | Thermal management |
+
+### Selected LED
+- **Component:** LTST-C190GKT  
+- **Rationale:** Single-color, SMT, simple interface, low power, cost-effective (~$0.14/unit), ideal for basic vehicle motion/status indication.  
+
+---
+
+## 4. Barrel Jack / Jumpers
+
+### Option 1: PJ-006A-SMT-TR
+- **Price:** $0.95/unit  
+- **Product Link:** [PJ-006A-SMT-TR on DigiKey](https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/PJ-006A-SMT-TR/408456)  
+- **Datasheet:** [PJ-006A Datasheet](https://www.sameskydevices.com/product/resource/pj-006a-smt.pdf)  
+
+| Pros | Cons |
+|------|------|
+| Standard barrel jack | Orientation matters |
+| Sufficient for application | Shipping fee |
+| Easy to install | Must ensure correct polarity |
+
+### Option 2: PJ-006B-SMT-TR
+- **Price:** $0.95/unit  
+- **Product Link:** [PJ-006B-SMT-TR on DigiKey](https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/PJ-006B-SMT-TR/408457)  
+- **Datasheet:** [PJ-006B Datasheet](https://www.sameskydevices.com/product/resource/pj-006b-smt.pdf)  
+
+| Pros | Cons |
+|------|------|
+| Standard barrel jack | Orientation matters |
+| Sufficient for application | Shipping fee |
+| Easy to install | Must ensure correct polarity |
+
+### Option 3: FC68148S (Jumper)
+- **Price:** $1.55/unit  
+- **Product Link:** [FC68148S on DigiKey](https://www.digikey.com/en/products/detail/cliff-electronic-components-ltd/FC68148S/20374233)  
+- **Datasheet:** [FC68148S Datasheet](https://www.cliffuk.co.uk/products/dcconnectors/FC68148S.pdf)  
+
+| Pros | Cons |
+|------|------|
+| Standard jumper | Small pitch, careful soldering |
+| Allows power routing control | Jumper shunt may be separate purchase |
+| Easy to integrate | Orientation matters |
+
+### Selected Barrel Jack / Jumpers
+- **Components:** PJ-006A-SMT-TR + FC68148S  
+- **Rationale:** Standard barrel jack, SMT, allows bus/jack disconnect, robust, easy to integrate; cost-effective (~$0.95 + $1.55/unit).  
+
+---
+
+## 5. Resistors and Capacitors
+
+### Selected Resistor
+- **Component:** ERA-6AEB472V  
+- **Price:** $0.10/unit  
+- **Description:** 4.7 kΩ ±0.1% 0.125W 0805 Automotive AEC-Q200 Thin Film  
+- **Datasheet:** [ERA-6AEB472V Datasheet](https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf)  
+
+### Selected Capacitor
+- **Component:** GRM033R61A104KE15D  
+- **Price:** $0.08/unit  
+- **Description:** 0.1 µF ±10% 10V X5R 0201 Ceramic Capacitor  
+- **Datasheet:** [GRM033R61A104KE15D Datasheet](https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM033R61A104KE15-01A.pdf)  
+
+---
+
+## Summary Table of Final Choices
+
+| Subsystem | Selected Component | Rationale |
+|-----------|------------------|-----------|
+| Motion / Speed Sensor | AS5600L-ASOM | SMT, I2C interface, sufficient resolution, easy implementation, cost-effective |
+| 3.3V Regulator | TLV73312PDBVR | Fixed 3.3V, low dropout, SMT, sufficient current, inexpensive |
+| LED Indicator | LTST-C190GKT | Simple control, low power, SMT, cost-effective |
+| Barrel Jack / Jumpers | PJ-006A-SMT-TR + FC68148S | Standard barrel jack, SMT, allows bus/jack disconnect, robust |
+| Resistor | ERA-6AEB472V | SMT 0805, precise value, automotive grade |
+| Capacitor | GRM033R61A104KE15D | SMT 0201, suitable voltage, stable X5R dielectric |
