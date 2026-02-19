@@ -14,7 +14,7 @@ title: Module's Selected Major Components
 <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/8a1ebea2-7ca5-44f9-b6c6-1774d983e67b" />
 
 - **Price:** $3.20/unit  
-- **Product Link:** [AS5600L-ASOM on DigiKey](https://www.digikey.com/en/products/detail/ams-osram-usa-inc/AS5600L-ASOM-SOIC8-LF-T-RDP/10324317)  
+- **Product Link:** [AS5600L-ASOM on DigiKey](https://look.ams-osram.com/m/657fca3b775890b7/original/AS5600L-DS000545.pdf)  
 - **Datasheet:** [AS5600 Datasheet](https://www.digikey.com/htmldatasheets/production/1647438/0/0/1/as5600-datasheet.pdf)  
 
 | Pros | Cons |
