@@ -13,4 +13,4 @@ This schematic is design to support .... (highlight functionally, power, and con
 
 ## Resouces
 
-The schematic as a PDF download is available [*here*](https://github.com/dcalde11/EGR314DonDataSheet/blob/f52198a34523fc47375b122d1c9932c9871e1892/docs/05-Schematic/314_HallEffect.pdf), and the Zip folder of the project [*here*](dummyZip.zip).
+The schematic as a PDF download is available [*here*](https://github.com/dcalde11/EGR314DonDataSheet/blob/f52198a34523fc47375b122d1c9932c9871e1892/docs/05-Schematic/314_HallEffect.pdf), and the Zip folder of the project [*here*](https://github.com/dcalde11/EGR314DonDataSheet/blob/7421da34dda7b92c2c98fd5cb48e675ecc7744d5/docs/05-Schematic/314_HallEffect_DCalderon.zip).
