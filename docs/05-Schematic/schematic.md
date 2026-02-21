@@ -7,7 +7,7 @@ title: Module Schematic
 This schematic is design to support .... (highlight functionally, power, and controller).
 
 
-![schematic](Screenshot.png){style width:"350" height:"300;"}
+![schematic](docs/05-Schematic/314Hall_effect.png){style width:"350" height:"300;"}
 **Figure ##:** Showing a example schematic.
 
 
