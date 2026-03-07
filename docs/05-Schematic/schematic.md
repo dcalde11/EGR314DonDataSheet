@@ -13,7 +13,7 @@ The design ensures:
 - System protection and filtering where required  
 
 
-(<img width="1062" height="733" alt="image" src="https://github.com/user-attachments/assets/8ddca327-cc1f-4ce9-a8fc-5bcd77c9466d" />)
+<img width="1062" height="733" alt="image" src="https://github.com/user-attachments/assets/8ddca327-cc1f-4ce9-a8fc-5bcd77c9466d" />
 
 **Figure 1:**  schematic of the Hall Effect module.
 
