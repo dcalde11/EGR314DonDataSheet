@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#power-budget-image" class="md-skip">
+        <a href="#power-budget" class="md-skip">
           Skip to content
         </a>
       
@@ -818,9 +818,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#power-budget-image" class="md-nav__link">
+  <a href="#power-budget" class="md-nav__link">
     <span class="md-ellipsis">
-      Power Budget Image
+      Power Budget
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-budget-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Budget Diagram
     </span>
   </a>
   
@@ -923,9 +932,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#power-budget-image" class="md-nav__link">
+  <a href="#power-budget" class="md-nav__link">
     <span class="md-ellipsis">
-      Power Budget Image
+      Power Budget
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-budget-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Budget Diagram
     </span>
   </a>
   
@@ -956,8 +974,17 @@
 
   <h1>Power Budget</h1>
 
-<h2 id="power-budget-image">Power Budget Image</h2>
+<h2 id="power-budget">Power Budget</h2>
+<p>The power budget for the 3D positioning system was developed to estimate the total current and power requirements of all major components in the design. The system is powered by a 12 V, 6 A external wall supply, which feeds voltage regulators that generate the required 3.3 V and 5 V power rails.</p>
+<p>The 3.3 V rail powers the low-voltage logic components, such as the ESP32-S3-WROOM-1-N4 microcontroller, two AS5600 sensors, two AS5600L sensors, and the system status/Debug LEDs. The 5 V rail powers the two high-torque RC servo motors used for the positioning mechanism, which require higher current
+during operation.</p>
+<p>A 25% safety margin was included in the power calculations to account for startup currents andfor any regulator inefficiencies. Based on the requirements, the selected 12 V, 6 A wall supply provides sufficient power to reliably operate all subsystems in the 3D positioning system. The use of fixed and
+adjustable voltage regulators ensures that each power rail maintains a stable output voltage even during load changes caused by servo movement. Proper decoupling capacitors and filtering components are also included in the design to reduce noise and improve overall power stability. This helps ensure
+reliable operation of components of the system. Below is an image as well as a pdf.</p>
+<hr>
+<h2 id="power-budget-diagram">Power Budget Diagram</h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../POWERB.png" data-desc-position="bottom"><img alt="Power Budget Diagram" src="../POWERB.png"></a></p>
+<p>** Power Budget Document**</p>
 <p><a href="https://raw.githubusercontent.com/dcalde11/EGR314DonDataSheet/14a7bfdc14af146cea544ae6aba1d2fa0e21dfae/docs/09-Power-Budget/BPOWER.pdf">Download Power Budget PDF</a></p>
 
 
