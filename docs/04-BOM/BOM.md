@@ -16,4 +16,4 @@ Written context needs to added!
 
 ## Resouce
 
-The Bill of Material as a PDF download is available [*here*](PDF_For_BOM_EXAMPLE.pdf).
+The Bill of Material as a PDF download is available [View BOM PDF](https://raw.githubusercontent.com/dcalde11/EGR314DonDataSheet/62f5b85da602b5edef347d28288260480803b96a/docs/04-BOM/boMPDF.pdf)
