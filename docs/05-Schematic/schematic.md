@@ -12,7 +12,8 @@ The design ensures:
 - Proper controller interfacing  
 - System protection and filtering where required  
 
-![Schematic](https://raw.githubusercontent.com/dcalde11/EGR314DonDataSheet/7e311185c184fb0021ce9d73dcf140ba8afff544/docs/05-Schematic/314Hall_effect.png)
+
+(<img width="1062" height="733" alt="image" src="https://github.com/user-attachments/assets/8ddca327-cc1f-4ce9-a8fc-5bcd77c9466d" />)
 
 **Figure 1:**  schematic of the Hall Effect module.
 
