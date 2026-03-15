@@ -854,6 +854,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#option-1-pj-070ah-smt-tr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: PJ-070AH-SMT-TR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#option-1-pj-006a-smt-tr" class="md-nav__link">
     <span class="md-ellipsis">
       Option 1: PJ-006A-SMT-TR
@@ -1461,6 +1470,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#option-1-pj-070ah-smt-tr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: PJ-070AH-SMT-TR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#option-1-pj-006a-smt-tr" class="md-nav__link">
     <span class="md-ellipsis">
       Option 1: PJ-006A-SMT-TR
@@ -1934,6 +1952,35 @@ adapter.</li>
 </ul>
 <hr>
 <h2 id="4-barrel-jack-jumpers">4. Barrel Jack / Jumpers</h2>
+<h3 id="option-1-pj-070ah-smt-tr">Option 1: PJ-070AH-SMT-TR</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/dcalde11/EGR314DonDataSheet/raw/06cb2f83ecf01079a6f8a901608ee002eb3983cb/docs/03-Component-Selection/BarrelJack.png" data-desc-position="bottom"><img width="200" height="200" alt="Barrel Jack Connector" src="https://github.com/dcalde11/EGR314DonDataSheet/raw/06cb2f83ecf01079a6f8a901608ee002eb3983cb/docs/03-Component-Selection/BarrelJack.png"></a></p>
+<ul>
+<li><strong>Price:</strong> $1.49/unit  </li>
+<li><strong>Product Link:</strong> <a href="https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/PJ-070AH-SMT-TR/3466646">PJ-070AH-SMT-TR on DigiKey</a>  </li>
+<li><strong>Datasheet:</strong> <a href="https://www.sameskydevices.com/product/resource/pj-070ah-smt-tr.pdf">PJ-006A Datasheet</a>  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard barrel jack</td>
+<td>Orientation matters since it points up</td>
+</tr>
+<tr>
+<td>Sufficient for application</td>
+<td>Shipping fee</td>
+</tr>
+<tr>
+<td>Easy to install</td>
+<td>Must ensure correct polarity</td>
+</tr>
+</tbody>
+</table>
 <h3 id="option-1-pj-006a-smt-tr">Option 1: PJ-006A-SMT-TR</h3>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/7322b12c-4f87-4b09-8c01-1bb6030f3f31" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/7322b12c-4f87-4b09-8c01-1bb6030f3f31"></a></p>
 <ul>
@@ -2023,8 +2070,8 @@ adapter.</li>
 </table>
 <h3 id="selected-barrel-jack-jumpers">Selected Barrel Jack / Jumpers</h3>
 <ul>
-<li><strong>Components:</strong> PJ-006A-SMT-TR + FC68148S  </li>
-<li><strong>Rationale:</strong> Standard barrel jack, SMT, allows bus/jack disconnect, robust, easy to integrate; cost-effective ($0.95 + $1.55/unit). Using both ensures flexible power distribution, while the jumper allows optional isolation of circuits for testing. The combination also minimizes PCB redesign if future expansion is needed.</li>
+<li><strong>Components:</strong> PJ-070AH-SMT-TR + FC68148S  </li>
+<li><strong>Rationale:</strong> Standard barrel jack,  easy to integrate; cost-effective ($0.95 + $1.55/unit). Using both ensures flexible power distribution, the jumper allows optional isolation of circuits for testing. The combination also minimizes PCB redesign if future expansion is needed.</li>
 </ul>
 <hr>
 <h2 id="5-resistors-and-capacitors">5. Resistors and Capacitors</h2>
@@ -2061,37 +2108,31 @@ adapter.</li>
 <tbody>
 <tr>
 <td>Motion / Speed Sensor</td>
-<td>AS5600L-ASOM</td>
-<td>SMT, I2C interface, sufficient resolution, easy implementation, cost-effective. Integrates well with MCC I2C and allows quick debugging. Robust and stable for compact 3D sensing.</td>
+<td>AS5600L-ASOM + AS5600-ASOM</td>
+<td>Two sensors used to avoid slave address conflicts, providing reliable I²C communication with the ESP32. High resolution allows accurate rotation measurement around the Z-axis; one sensor represents pitch, the other yaw.</td>
 </tr>
 <tr>
-<td>3.3V Regulator</td>
-<td>TLV73312PDBVR</td>
-<td>Fixed 3.3V, low dropout, SMT, sufficient current, inexpensive. Compact, stable voltage, minimal noise for I2C/ADC.</td>
+<td>3.3V &amp; 5V Regulators</td>
+<td>TLV73312PDBVR + TPS565242DRLR</td>
+<td>TLV73312PDBVR provides stable 3.3V for ESP32 and sensors; TPS565242DRLR provides 5V, 5A for servos including stall current. Regulators operate in parallel to efficiently distribute power from the wall adapter.</td>
 </tr>
 <tr>
 <td>LED Indicator</td>
 <td>LTST-C190GKT</td>
-<td>Simple control, low power, SMT, cost-effective. Works well with PWM, low draw, consistent brightness.</td>
+<td>Single-color SMT LEDs, low power, cost-effective, simple interface. Ideal for visual feedback and PWM testing without stressing the 3.3V regulator.</td>
 </tr>
 <tr>
 <td>Barrel Jack / Jumpers</td>
-<td>PJ-006A-SMT-TR + FC68148S</td>
-<td>Standard barrel jack, SMT, allows bus/jack disconnect, robust. Flexible power routing, optional circuit isolation for testing.</td>
+<td>PJ-070AH-SMT-TR</td>
+<td>Standard barrel jack for power input with flexible integration; jumper allows optional isolation of circuits for testing or future expansion. Cost-effective and easy to install.</td>
 </tr>
 <tr>
-<td>Resistor</td>
-<td>ERA-6AEB472V</td>
-<td>SMT 0805, precise value, automotive grade. Stable under temperature variation, low noise.</td>
-</tr>
-<tr>
-<td>Capacitor</td>
-<td>GRM033R61A104KE15D</td>
-<td>SMT 0201, suitable voltage. Ideal for decoupling, low ESR, reduces I2C noise.</td>
+<td>---</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<hr>
 
 
 
