@@ -21,7 +21,7 @@ title: Module's Selected Major Components
 | Pros | Cons |
 |------|------|
 | Inexpensive | Slow shipping |
-| Compatible with PSoC | Shipping fee |
+| Compatible with Thonny | Shipping fee |
 | Easy to install | Hard to get readings |
 
 #### Option 2: AS5600-ASOM SOIC8 LF T&RDP
@@ -35,7 +35,7 @@ title: Module's Selected Major Components
 | Pros | Cons |
 |------|------|
 | Easy to read | Slow shipping |
-| Compatible with PSoC | Shipping fee |
+| Compatible with Thonny | Shipping fee |
 | Easy to install | Hard to get readings |
 
 #### Option 3: AS5048A-HTSP-500
@@ -65,9 +65,13 @@ title: Module's Selected Major Components
 | Easy to install | Detects either pole |
 
 ### Selected Sensor
-- **Component:** AS5600L-ASOM  
-- **Rationale:** SMT package, I2C interface, sufficient resolution (12-bit) for vehicle motion/speed detection, easy implementation, cost-effective ($3.20/unit). This sensor also integrates smoothly with our MCC I2C setup and allows for quick debugging using standard libraries. Its robustness ensures stable readings even in a compact 3D motion sensing setup.
-
+- **Component:** AS5600L-ASOM (00x36) and AS5600-ASOM (00x40) 
+- **Rationale:** I needed to use two different sensors because rewriting their slave address was not
+possible, even with the use of a MOSFET. However, this setup allows for more controlled readings since there
+will be no communication conflicts between the sensors and the ESP32. Both sensors have high enough
+resolution to provide adequate response time in gathering the degrees of rotation around the Z-axis. Each
+sensor is positioned to represent either pitch or yaw.
+ 
 ---
 
 ## 2. Power Regulation
@@ -126,9 +130,12 @@ title: Module's Selected Major Components
 | Accurate | Thermal management required |
 
 ### Selected Regulator
-- **Component:** TLV73312PDBVR  
-- **Rationale:** Fixed 3.3V, low dropout, SMT, sufficient current (250 mA), cost-effective ($0.17/unit), reduces design complexity. This regulator is compact enough to fit the board layout easily and provides stable voltage for both the MCU and sensors. Its simple design minimizes potential noise in sensitive I2C and ADC readings.
-
+- **Component:** TLV73312PDBVR and TPS565242DRLR
+- **Rationale:** The reason we are using two different regulators is because the sensors and the ESP32 run
+on 3.3 V, while the servos require roughly 5 V. Each servo has a stall current of about 2.5 A. The
+TPS565242DRLR provides a controlled 5 V, 5 A output, which is adequate to power the servos and support them
+during stall conditions. Both regulators operate in parallel to properly distribute power from the wall
+adapter.
 ---
 
 ## 3. LED Indicators
