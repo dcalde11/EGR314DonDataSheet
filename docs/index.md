@@ -74,10 +74,5 @@ Subsystem
 *  To review power distribution, refer to the [Power Budget](https://dcalde11.github.io/EGR314DonDataSheet/09-Power-Budget/Power-Budget/).
 * To review the cost of components in the subsystem, refer to the [Bill of Materials](https://dcalde11.github.io/EGR314DonDataSheet/04-BOM/BOM/).
 * To review the layout of the individual subsystem, refer to the [Schematic](https://dcalde11.github.io/EGR314DonDataSheet/05-Schematic/schematic/).
+* To review the physical board layout, refer to the [PCB Design](https://dcalde11.github.io/EGR314DonDataSheet/06-PCB/pcb/).
 
-## PlaceHolders
-
-* To review the physical board layout, refer to the [PCB Design](PlaceLink).
-
-* To review additional references and documentation, refer to the [Resources](PasteLink).
-* To review proposed hardware improvements, refer to [Hardware Version 2](https://dcalde11.github.io/09-Hardware%20V.2/version2/).
