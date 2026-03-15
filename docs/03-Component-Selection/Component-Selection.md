@@ -4,6 +4,7 @@ title: Module's Selected Major Components
 
 # Part 1: Major Component Selections
 
+
 ---
 
 ## 1. Hall Effect Sensor (Motion & Speed Sensing)
@@ -24,10 +25,11 @@ title: Module's Selected Major Components
 | Easy to install | Hard to get readings |
 
 #### Option 2: AS5600-ASOM SOIC8 LF T&RDP
-<>
+<img width="200" height="200" alt="AS5600 Hall Effect Sensor" src="https://github.com/dcalde11/EGR314DonDataSheet/raw/f8f62ec46a2a4f0df44f42bfbb685c8b1fb6fd15/docs/03-Component-Selection/AS5600.png">
+
 
 - **Price:** $3.17/unit  
-- **Product Link:** [AS5600L-ASOM on DigiKey](https://www.digikey.com/en/products/detail/ams-osram-usa-inc/AS5600-ASOM-SOIC8-LF-T-RDP/4914332)  
+- **Product Link:** [AS5600-ASOM on DigiKey](https://www.digikey.com/en/products/detail/ams-osram-usa-inc/AS5600-ASOM-SOIC8-LF-T-RDP/4914332)  
 - **Datasheet:** [AS5600 Datasheet](https://look.ams-osram.com/m/7059eac7531a86fd/original/AS5600-DS000365.pdf)  
 
 | Pros | Cons |
@@ -71,7 +73,7 @@ title: Module's Selected Major Components
 ## 2. Power Regulation
 
 ### Option 1: TPS565242DRLR
-<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/8a91c22b-b99c-43a8-9a07-9cd02a98f67d" />
+<img width="200" height="200" alt="5V Voltage Regulator" src="https://github.com/dcalde11/EGR314DonDataSheet/raw/f8f62ec46a2a4f0df44f42bfbb685c8b1fb6fd15/docs/03-Component-Selection/5VoltR.png" />
 
 - **Price:** $0.65/unit  
 - **Product Link:** [TPS565242DRLR on DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/TPS565242DRLR/16585745)  
