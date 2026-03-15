@@ -280,5 +280,5 @@ adapter.
 | 3.3V & 5V Regulators | TLV73312PDBVR + TPS565242DRLR | TLV73312PDBVR provides stable 3.3V for ESP32 and sensors; TPS565242DRLR provides 5V, 5A for servos including stall current. Regulators operate in parallel to efficiently distribute power from the wall adapter. |
 | LED Indicator | LTST-C190GKT | Single-color SMT LEDs, low power, cost-effective, simple interface. Ideal for visual feedback and PWM testing without stressing the 3.3V regulator. |
 | Barrel Jack / Jumpers | PJ-070AH-SMT-TR | Standard barrel jack for power input with flexible integration; jumper allows optional isolation of circuits for testing or future expansion. Cost-effective and easy to install. |
----
+
 
