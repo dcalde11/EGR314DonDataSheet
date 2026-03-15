@@ -36,4 +36,4 @@ This block diagram illustrates the overall system architecture centered around t
 - These connections allow system integration while avoiding duplicated functionality across team members.
 
 
-![Individual Block Diagram](https://github.com/dcalde11/EGR314DonDataSheet/raw/a509418d56f460ab2f5f93befa5f674fc9e85620/docs/02-Block-Diagram/314BD3.drawio.png)
+![Individual Block Diagram](https://github.com/dcalde11/EGR314DonDataSheet/raw/79f4ddfb4dbc87574f77d2af221d91c7b53191c4/docs/02-Block-Diagram/FinalBD314V2.png)
