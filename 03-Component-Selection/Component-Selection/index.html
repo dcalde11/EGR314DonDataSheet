@@ -1590,7 +1590,7 @@
 <td>Slow shipping</td>
 </tr>
 <tr>
-<td>Compatible with PSoC</td>
+<td>Compatible with Thonny</td>
 <td>Shipping fee</td>
 </tr>
 <tr>
@@ -1619,7 +1619,7 @@
 <td>Slow shipping</td>
 </tr>
 <tr>
-<td>Compatible with PSoC</td>
+<td>Compatible with Thonny</td>
 <td>Shipping fee</td>
 </tr>
 <tr>
@@ -1688,8 +1688,12 @@
 </table>
 <h3 id="selected-sensor">Selected Sensor</h3>
 <ul>
-<li><strong>Component:</strong> AS5600L-ASOM  </li>
-<li><strong>Rationale:</strong> SMT package, I2C interface, sufficient resolution (12-bit) for vehicle motion/speed detection, easy implementation, cost-effective ($3.20/unit). This sensor also integrates smoothly with our MCC I2C setup and allows for quick debugging using standard libraries. Its robustness ensures stable readings even in a compact 3D motion sensing setup.</li>
+<li><strong>Component:</strong> AS5600L-ASOM (00x36) and AS5600-ASOM (00x40) </li>
+<li><strong>Rationale:</strong> I needed to use two different sensors because rewriting their slave address was not
+possible, even with the use of a MOSFET. However, this setup allows for more controlled readings since there
+will be no communication conflicts between the sensors and the ESP32. Both sensors have high enough
+resolution to provide adequate response time in gathering the degrees of rotation around the Z-axis. Each
+sensor is positioned to represent either pitch or yaw.</li>
 </ul>
 <hr>
 <h2 id="2-power-regulation">2. Power Regulation</h2>
@@ -1815,8 +1819,12 @@
 </table>
 <h3 id="selected-regulator">Selected Regulator</h3>
 <ul>
-<li><strong>Component:</strong> TLV73312PDBVR  </li>
-<li><strong>Rationale:</strong> Fixed 3.3V, low dropout, SMT, sufficient current (250 mA), cost-effective ($0.17/unit), reduces design complexity. This regulator is compact enough to fit the board layout easily and provides stable voltage for both the MCU and sensors. Its simple design minimizes potential noise in sensitive I2C and ADC readings.</li>
+<li><strong>Component:</strong> TLV73312PDBVR and TPS565242DRLR</li>
+<li><strong>Rationale:</strong> The reason we are using two different regulators is because the sensors and the ESP32 run
+on 3.3 V, while the servos require roughly 5 V. Each servo has a stall current of about 2.5 A. The
+TPS565242DRLR provides a controlled 5 V, 5 A output, which is adequate to power the servos and support them
+during stall conditions. Both regulators operate in parallel to properly distribute power from the wall
+adapter.</li>
 </ul>
 <hr>
 <h2 id="3-led-indicators">3. LED Indicators</h2>
