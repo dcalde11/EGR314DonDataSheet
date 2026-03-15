@@ -270,8 +270,8 @@ adapter.
 - **Link:** [DigiKey Product Page](https://www.digikey.com/en/products/detail/murata-electronics/GRM033R61A104KE15D/2269163)  
 - **Rationale:** SMT 0201, suitable voltage, compact and ideal for decoupling near the MCU. Its low ESR and X5R dielectric ensure stable power to sensitive analog circuits and reduce noise in I2C lines.
 
-### Selected Capacitor
-<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/81d06c28-9c3a-459e-b5a1-3b1e73eb52c9" />
+### Selected Servos
+<img width="200" height="200" alt="RC Servo Motor 1142" src="https://github.com/dcalde11/EGR314DonDataSheet/raw/3ce70d6272f4b5e59168a2b03d734786dd0f738b/docs/03-Component-Selection/Servo.png" />
 
 - **Component:** 1142  
 - **Price:** $19.95/unit  
