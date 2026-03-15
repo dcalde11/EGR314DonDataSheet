@@ -189,6 +189,19 @@ adapter.
 ---
 
 ## 4. Barrel Jack / Jumpers
+### Option 1: PJ-070AH-SMT-TR
+<img width="200" height="200" alt="Barrel Jack Connector" src="https://github.com/dcalde11/EGR314DonDataSheet/raw/06cb2f83ecf01079a6f8a901608ee002eb3983cb/docs/03-Component-Selection/BarrelJack.png" />
+
+- **Price:** $1.49/unit  
+- **Product Link:** [PJ-070AH-SMT-TR on DigiKey](https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/PJ-070AH-SMT-TR/3466646)  
+- **Datasheet:** [PJ-006A Datasheet](https://www.sameskydevices.com/product/resource/pj-070ah-smt-tr.pdf)  
+
+| Pros | Cons |
+|------|------|
+| Standard barrel jack | Orientation matters since it points up|
+| Sufficient for application | Shipping fee |
+| Easy to install | Must ensure correct polarity |
+
 
 ### Option 1: PJ-006A-SMT-TR
 <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/7322b12c-4f87-4b09-8c01-1bb6030f3f31" />
@@ -230,8 +243,8 @@ adapter.
 | Easy to integrate | Orientation matters |
 
 ### Selected Barrel Jack / Jumpers
-- **Components:** PJ-006A-SMT-TR + FC68148S  
-- **Rationale:** Standard barrel jack, SMT, allows bus/jack disconnect, robust, easy to integrate; cost-effective ($0.95 + $1.55/unit). Using both ensures flexible power distribution, while the jumper allows optional isolation of circuits for testing. The combination also minimizes PCB redesign if future expansion is needed.
+- **Components:** PJ-070AH-SMT-TR + FC68148S  
+- **Rationale:** Standard barrel jack,  easy to integrate; cost-effective ($0.95 + $1.55/unit). Using both ensures flexible power distribution, the jumper allows optional isolation of circuits for testing. The combination also minimizes PCB redesign if future expansion is needed.
 
 ---
 
@@ -263,12 +276,9 @@ adapter.
 
 | Subsystem | Selected Component | Rationale |
 |-----------|------------------|-----------|
-| Motion / Speed Sensor | AS5600L-ASOM | SMT, I2C interface, sufficient resolution, easy implementation, cost-effective. Integrates well with MCC I2C and allows quick debugging. Robust and stable for compact 3D sensing. |
-| 3.3V Regulator | TLV73312PDBVR | Fixed 3.3V, low dropout, SMT, sufficient current, inexpensive. Compact, stable voltage, minimal noise for I2C/ADC. |
-| LED Indicator | LTST-C190GKT | Simple control, low power, SMT, cost-effective. Works well with PWM, low draw, consistent brightness. |
-| Barrel Jack / Jumpers | PJ-006A-SMT-TR + FC68148S | Standard barrel jack, SMT, allows bus/jack disconnect, robust. Flexible power routing, optional circuit isolation for testing. |
-| Resistor | ERA-6AEB472V | SMT 0805, precise value, automotive grade. Stable under temperature variation, low noise. |
-| Capacitor | GRM033R61A104KE15D | SMT 0201, suitable voltage. Ideal for decoupling, low ESR, reduces I2C noise. |
-
+| Motion / Speed Sensor | AS5600L-ASOM + AS5600-ASOM | Two sensors used to avoid slave address conflicts, providing reliable I²C communication with the ESP32. High resolution allows accurate rotation measurement around the Z-axis; one sensor represents pitch, the other yaw. |
+| 3.3V & 5V Regulators | TLV73312PDBVR + TPS565242DRLR | TLV73312PDBVR provides stable 3.3V for ESP32 and sensors; TPS565242DRLR provides 5V, 5A for servos including stall current. Regulators operate in parallel to efficiently distribute power from the wall adapter. |
+| LED Indicator | LTST-C190GKT | Single-color SMT LEDs, low power, cost-effective, simple interface. Ideal for visual feedback and PWM testing without stressing the 3.3V regulator. |
+| Barrel Jack / Jumpers | PJ-070AH-SMT-TR | Standard barrel jack for power input with flexible integration; jumper allows optional isolation of circuits for testing or future expansion. Cost-effective and easy to install. |
 ---
 
