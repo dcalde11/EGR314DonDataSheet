@@ -248,7 +248,7 @@ adapter.
 
 ---
 
-## 5. Resistors and Capacitors
+## 5. Additional Hardware
 
 ### Selected Resistor
 <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/db28723b-d099-41ba-8cf4-d1f2f23a67bb" />
@@ -270,15 +270,24 @@ adapter.
 - **Link:** [DigiKey Product Page](https://www.digikey.com/en/products/detail/murata-electronics/GRM033R61A104KE15D/2269163)  
 - **Rationale:** SMT 0201, suitable voltage, compact and ideal for decoupling near the MCU. Its low ESR and X5R dielectric ensure stable power to sensitive analog circuits and reduce noise in I2C lines.
 
+### Selected Capacitor
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/81d06c28-9c3a-459e-b5a1-3b1e73eb52c9" />
+
+- **Component:** 1142  
+- **Price:** $19.95/unit  
+- **Description:** SERVOMOTOR RC 5V HIGH TORQUE 
+- **Datasheet:** [1142 Datasheet](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/2203/1142_Web.pdf)  
+- **Link:** [DigiKey Product Page](https://www.digikey.com/en/products/detail/adafruit-industries-llc/1142/5154658?s=N4IgTCBcDaILIHECcSCsIC6BfIA)  
+- **Rationale:** - **Rationale:** We have experience using these servos, and there is also a possibility of being provided one by the professor. The range of 0–180 degrees is sufficient for adjusting the fins for this application.
 ---
 
 ## Summary Table of Final Choices
 
 | Subsystem | Selected Component | Rationale |
 |-----------|------------------|-----------|
-| Motion / Speed Sensor | AS5600L-ASOM + AS5600-ASOM | Two sensors used to avoid slave address conflicts, providing reliable I²C communication with the ESP32. High resolution allows accurate rotation measurement around the Z-axis; one sensor represents pitch, the other yaw. |
+| Motion Detection Sensor | AS5600L-ASOM + AS5600-ASOM | Two sensors used to avoid slave address conflicts, providing reliable I²C communication with the ESP32. High resolution allows accurate rotation measurement around the Z-axis; one sensor represents pitch, the other yaw. |
 | 3.3V & 5V Regulators | TLV73312PDBVR + TPS565242DRLR | TLV73312PDBVR provides stable 3.3V for ESP32 and sensors; TPS565242DRLR provides 5V, 5A for servos including stall current. Regulators operate in parallel to efficiently distribute power from the wall adapter. |
 | LED Indicator | LTST-C190GKT | Single-color SMT LEDs, low power, cost-effective, simple interface. Ideal for visual feedback and PWM testing without stressing the 3.3V regulator. |
 | Barrel Jack / Jumpers | PJ-070AH-SMT-TR | Standard barrel jack for power input with flexible integration; jumper allows optional isolation of circuits for testing or future expansion. Cost-effective and easy to install. |
-
+| Servo Motor (Control Fins) | 1142 RC Servo Motor | High-torque 5V servo used to control the fins for directional adjustments. The 0–180° motion range is sufficient for fin control, and prior experience with this servo simplifies integration and testing. |
 
