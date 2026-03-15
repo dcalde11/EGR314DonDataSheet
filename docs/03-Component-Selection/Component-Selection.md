@@ -23,7 +23,20 @@ title: Module's Selected Major Components
 | Compatible with PSoC | Shipping fee |
 | Easy to install | Hard to get readings |
 
-#### Option 2: AS5048A-HTSP-500
+#### Option 2: AS5600-ASOM SOIC8 LF T&RDP
+<>
+
+- **Price:** $3.17/unit  
+- **Product Link:** [AS5600L-ASOM on DigiKey](https://www.digikey.com/en/products/detail/ams-osram-usa-inc/AS5600-ASOM-SOIC8-LF-T-RDP/4914332)  
+- **Datasheet:** [AS5600 Datasheet](https://look.ams-osram.com/m/7059eac7531a86fd/original/AS5600-DS000365.pdf)  
+
+| Pros | Cons |
+|------|------|
+| Easy to read | Slow shipping |
+| Compatible with PSoC | Shipping fee |
+| Easy to install | Hard to get readings |
+
+#### Option 3: AS5048A-HTSP-500
 <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/046b84b0-2fc0-4362-bee1-dacb8670e817" />
 
 - **Price:** $7.90/unit  
@@ -36,7 +49,7 @@ title: Module's Selected Major Components
 | Direction detection possible | Requires precise magnet alignment |
 | Easy to install | More expensive |
 
-#### Option 3: A3212ELHLT-T
+#### Option 4: A3212ELHLT-T
 <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/c515c5e1-c8d8-4a31-8d23-9ebcba874783" />
 
 - **Price:** $0.53/unit  
