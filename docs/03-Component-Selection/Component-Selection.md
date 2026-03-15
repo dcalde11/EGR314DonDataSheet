@@ -70,7 +70,20 @@ title: Module's Selected Major Components
 
 ## 2. Power Regulation
 
-### Option 1: TLV73312PDBVR
+### Option 1: TPS565242DRLR
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/8a91c22b-b99c-43a8-9a07-9cd02a98f67d" />
+
+- **Price:** $0.65/unit  
+- **Product Link:** [TPS565242DRLR on DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/TPS565242DRLR/16585745)  
+- **Datasheet:** [TPS565242DRLR Datasheet](https://www.ti.com/lit/ds/symlink/tps565242.pdf)  
+
+| Pros | Cons |
+|------|------|
+| Low dropout | Generates heat at high Vin |
+| Fixed 3.3V output | Limited to 250mA |
+| Easy to install | — |
+
+### Option 2: TLV73312PDBVR
 <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/8a91c22b-b99c-43a8-9a07-9cd02a98f67d" />
 
 - **Price:** $0.17/unit  
@@ -83,7 +96,7 @@ title: Module's Selected Major Components
 | Fixed 3.3V output | Limited to 250mA |
 | Easy to install | — |
 
-### Option 2: LP38511MRX-ADJ/NOPB
+### Option 3: LP38511MRX-ADJ/NOPB
 <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/8a2c37bb-ea94-447d-a0be-842722ccb03b" />
 
 - **Price:** $1.89/unit  
@@ -96,7 +109,7 @@ title: Module's Selected Major Components
 | Adjustable output voltage | Requires external resistors |
 | Accurate | Thermal management required |
 
-### Option 3: LP38511TJ-ADJ/NOPB
+### Option 4: LP38511TJ-ADJ/NOPB
 <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/99ae5960-4966-4fa2-a424-29bc71ba8d54" />
 
 - **Price:** $1.89/unit  
