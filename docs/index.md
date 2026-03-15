@@ -15,19 +15,59 @@ for<br>
 </center>
 
 ## Introduction
-As a member of Team 307, my responsibility is to ensure everyone stays on track to meet our project deadlines while
-maintaining a professional tone when enforcing quality standards and expectations. This will be accomplished by supporting
-my teammates with the development of their modulus within the project. However not being limited to that but, taking it to
-the extent of making tough calls on priority tasks, and pushing back deadlines to uphold integrity in ourselves and our
-work. While my main subsystem still hasn't been disclosed I look forward to the collaboration this project brings. This
-record outlines my contributions to the electrical setup and performance that made the project a success.
+As a member of Team 307, my responsibility was to help 
+ensure the team remained on schedule while maintaining a 
+professional standard for quality and performance. I 
+supported teammates in the development of their modules 
+according to project requirements while also assisting in 
+prioritizing critical tasks when deadlines approached.
+
+These responsibilities sometimes required difficult 
+decisions, including adjusting timelines to preserve the 
+integrity of both the project and our work. In addition 
+to these leadership duties, my primary technical focus 
+was the development of the 3D orientation and positioning 
+subsystem.
+
+This page documents my contributions to the electrical 
+design, system integration, and performance of the final 
+project.
 
 ### Project Summary
 
-* This needs to be updated to reflect <ins>your version</ins> of the team project, so when shared not via the team's report, the reader gets an idea of the direction of the project and how your work will contribute to the overall success.
+The concept of a Submersible Exploration Device that the
+team came up is to support safe and efficient
+underwater exploration through controlled navigation, 
+environmental sensing, and real-time system monitoring. 
+The overall system integrates pressure and temperature 
+sensors for environmental data collection, obstacle
+detection for safe movement, and a modular human–machine 
+interface that allows operators to monitor system
+performance and interact with the device during operation.
+
+My contribution to this project focused on the 
+development and integration of the electrical systems 
+that support the device’s operation, including the 
+implementation of the 3D orientation and positioning 
+subsystem. This work involved ensuring reliable 
+communication between sensors, microcontrollers, and 
+hardware while maintaining stable power distribution 
+throughout the system. However my contribution extends 
+further into the development of the Navigation system 
+using the concept of bevel gears for the mounting of the 
+motor controlling the propulsion, as well as the 
+developemnt of ALL code across all subsystems.
+Below are a few links that highlight my contributions
+with the Team Website as well as my Teammates websites 
+
 * Add context that ties into the link to your [307 Team Report.](https://egr-314-team-307-spring-2026.github.io/Team307.github.io/)
 
-### My Contribution (Future Add ons)
+### Direct Links 
+Here are links across my website that help you navigate 
+to speific areas of interest that helped in the 
+development of my 3D Orientation and Positionment 
+Subsystem 
+
 * To review the details and relationships between the system’s components, refer to the [Block Diagram](https://dcalde11.github.io/EGR314DonDataSheet/02-Block-Diagram/Block-Diagram/).
 * To review the system’s components, refer to the [Component Selection](https://dcalde11.github.io/EGR314DonDataSheet/03-Component-Selection/Component-Selection/).
 * To review the firmware implementation, refer to the [Microcontroller Code](https://dcalde11.github.io/EGR314DonDataSheet/08-MircoController/MicroController/).
