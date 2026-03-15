@@ -904,13 +904,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-resistors-and-capacitors" class="md-nav__link">
+  <a href="#5-additional-hardware" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Resistors and Capacitors
+      5. Additional Hardware
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5. Resistors and Capacitors">
+    <nav class="md-nav" aria-label="5. Additional Hardware">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -924,6 +924,15 @@
         
           <li class="md-nav__item">
   <a href="#selected-capacitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selected Capacitor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selected-capacitor_1" class="md-nav__link">
     <span class="md-ellipsis">
       Selected Capacitor
     </span>
@@ -1520,13 +1529,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-resistors-and-capacitors" class="md-nav__link">
+  <a href="#5-additional-hardware" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Resistors and Capacitors
+      5. Additional Hardware
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5. Resistors and Capacitors">
+    <nav class="md-nav" aria-label="5. Additional Hardware">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1540,6 +1549,15 @@
         
           <li class="md-nav__item">
   <a href="#selected-capacitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selected Capacitor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selected-capacitor_1" class="md-nav__link">
     <span class="md-ellipsis">
       Selected Capacitor
     </span>
@@ -2074,7 +2092,7 @@ adapter.</li>
 <li><strong>Rationale:</strong> Standard barrel jack,  easy to integrate; cost-effective ($0.95 + $1.55/unit). Using both ensures flexible power distribution, the jumper allows optional isolation of circuits for testing. The combination also minimizes PCB redesign if future expansion is needed.</li>
 </ul>
 <hr>
-<h2 id="5-resistors-and-capacitors">5. Resistors and Capacitors</h2>
+<h2 id="5-additional-hardware">5. Additional Hardware</h2>
 <h3 id="selected-resistor">Selected Resistor</h3>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/db28723b-d099-41ba-8cf4-d1f2f23a67bb" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/db28723b-d099-41ba-8cf4-d1f2f23a67bb"></a></p>
 <ul>
@@ -2095,6 +2113,16 @@ adapter.</li>
 <li><strong>Link:</strong> <a href="https://www.digikey.com/en/products/detail/murata-electronics/GRM033R61A104KE15D/2269163">DigiKey Product Page</a>  </li>
 <li><strong>Rationale:</strong> SMT 0201, suitable voltage, compact and ideal for decoupling near the MCU. Its low ESR and X5R dielectric ensure stable power to sensitive analog circuits and reduce noise in I2C lines.</li>
 </ul>
+<h3 id="selected-capacitor_1">Selected Capacitor</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/81d06c28-9c3a-459e-b5a1-3b1e73eb52c9" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/81d06c28-9c3a-459e-b5a1-3b1e73eb52c9"></a></p>
+<ul>
+<li><strong>Component:</strong> 1142  </li>
+<li><strong>Price:</strong> $19.95/unit  </li>
+<li><strong>Description:</strong> SERVOMOTOR RC 5V HIGH TORQUE </li>
+<li><strong>Datasheet:</strong> <a href="https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/2203/1142_Web.pdf">1142 Datasheet</a>  </li>
+<li><strong>Link:</strong> <a href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/1142/5154658?s=N4IgTCBcDaILIHECcSCsIC6BfIA">DigiKey Product Page</a>  </li>
+<li><strong>Rationale:</strong> - <strong>Rationale:</strong> We have experience using these servos, and there is also a possibility of being provided one by the professor. The range of 0–180 degrees is sufficient for adjusting the fins for this application.</li>
+</ul>
 <hr>
 <h2 id="summary-table-of-final-choices">Summary Table of Final Choices</h2>
 <table>
@@ -2107,7 +2135,7 @@ adapter.</li>
 </thead>
 <tbody>
 <tr>
-<td>Motion / Speed Sensor</td>
+<td>Motion Detection Sensor</td>
 <td>AS5600L-ASOM + AS5600-ASOM</td>
 <td>Two sensors used to avoid slave address conflicts, providing reliable I²C communication with the ESP32. High resolution allows accurate rotation measurement around the Z-axis; one sensor represents pitch, the other yaw.</td>
 </tr>
@@ -2125,6 +2153,11 @@ adapter.</li>
 <td>Barrel Jack / Jumpers</td>
 <td>PJ-070AH-SMT-TR</td>
 <td>Standard barrel jack for power input with flexible integration; jumper allows optional isolation of circuits for testing or future expansion. Cost-effective and easy to install.</td>
+</tr>
+<tr>
+<td>Servo Motor (Control Fins)</td>
+<td>1142 RC Servo Motor</td>
+<td>High-torque 5V servo used to control the fins for directional adjustments. The 0–180° motion range is sufficient for fin control, and prior experience with this servo simplifies integration and testing.</td>
 </tr>
 </tbody>
 </table>
