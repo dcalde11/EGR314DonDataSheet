@@ -1023,75 +1023,84 @@
   <h1>Module's Requirements</h1>
 
 <h2 id="module-requirements">Module Requirements</h2>
-<p>The table below outlines the key requirements designated to me, compiled from the team’s <a href="https://egr-314-team-307-spring-2026.github.io/Team307.github.io/03-Project-Requirements/Project-requirements/">Project Requirements</a>. My
-responsibility lies in the Motion and Speed Sensing Module of the vehicle. The module itself is responsible for 
-detecting the vehicle’s motion state (also known as the zero state), measuring speed, and identifying obstacles to 
-ensure safe and accurate operation. The table details each requirement along with its description, outlining the 
-minimum threshold necessary for the module to function correctly. Each component is surface-mounted, aside from
-minor components such as resistors and capacitors. This module will operate independently using a surface-mounted
-3.3V switching power regulator and an ESP32 microcontroller as its processing unit. It will utilize sensors such as 
-Hall Effect sensors for speed measurement and distance sensors for obstacle detection, while communicating motion 
-data wirelessly to the system or user interface. The module’s fast reaction time ensures that motion changes are 
-detected and reported promptly, supporting the overall safe operation and control of the vehicle.</p>
+<p>The table below outlines the key requirements designated to me, compiled from the team’s <a href="https://egr-314-team-307-spring-2026.github.io/Team307.github.io/03-Project-Requirements/Project-requirements/">Project Requirements</a> . My primary responsibility focuses on the 
+predicted 3D positioning and speed integration calculations for the vehicle. This subsystem is responsible for determining the 
+vehicle’s motion state (also known as the zero state) and estimating movement using rotational data around the Z-axis combined with 
+speed data received from another subsystem.</p>
+<p>The speed information is received through UART communication and is used as the magnitude component in forming a motion vector. By 
+combining rotational orientation data with the incoming speed values, the subsystem is able to estimate the vehicle’s predicted 
+movement and directional state.</p>
+<p>This module operates independently using a surface-mounted 3.3V switching power regulator and an ESP32 microcontroller as its primary 
+processing unit. The system utilizes Hall effect sensors to detect rotational changes and determine the angular movement around the Z-
+axis. Additional Hall effect sensors are used to control two servo motors that function as control fins for the vehicle.</p>
+<p>A dedicated debug function allows the system to reset when needed, ensuring reliable operation during testing and deployment. 
+Throughout operation, motion data is transmitted wirelessly to the main system interface for monitoring and analysis.</p>
 <table>
 <thead>
 <tr>
 <th><strong>Requirement</strong></th>
 <th><strong>Description</strong></th>
-<th><strong>Measure of<br> Threshold <br> (Minimum to Pass)</strong></th>
-<th><strong>Target<br>Measure</strong></th>
-<th style="text-align: center;"><strong>Stretch<br>Requirement<br>(Y-N)</strong></th>
+<th><strong>Measure of Threshold (Minimum to Pass)</strong></th>
+<th><strong>Target Measure</strong></th>
+<th style="text-align: center;"><strong>Stretch Requirement (Y/N)</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Surface mounted, 3.3V switching power regulator</td>
-<td>Will be used to supply power to the module as it has to work independently as well.</td>
-<td>3.2 Volts</td>
-<td>3.3 Volts</td>
+<td>Surface-mounted 3.3V switching power regulator</td>
+<td>Provides regulated power to the module, allowing the subsystem to operate independently from other systems.</td>
+<td>≥ 3.2 V output</td>
+<td>3.3 V regulated output</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Surface mounted microcontroller (ESP)</td>
-<td>Will Serve as the "Brain" of the module,</td>
-<td>ESP</td>
-<td>ESP32</td>
+<td>Surface-mounted microcontroller (ESP)</td>
+<td>Serves as the primary processing unit responsible for data handling, sensor integration, and subsystem control.</td>
+<td>ESP-based microcontroller</td>
+<td>ESP32 microcontroller</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
 <td>Wireless Communication</td>
-<td>Able to send or receive a Wi-Fi data</td>
-<td>Being able to send and get some sort of signal</td>
-<td>Efficiently Send and receive Wi-Fi Data to MQTT</td>
+<td>Enables the module to transmit and receive operational data through a wireless network connection.</td>
+<td>Ability to send and receive basic signal data</td>
+<td>Efficiently transmit and receive Wi-Fi data using MQTT protocol</td>
 <td style="text-align: center;">Yes</td>
 </tr>
 <tr>
 <td>Speed Measurement Sensor (Hall Effect Sensor)</td>
-<td>Measures/estimates the speed of the vehicle in 3D Space</td>
-<td>+/- 10% accuracy</td>
-<td>+/- 5% accuracy</td>
+<td>Measures or estimates the vehicle’s speed in 3D space based on rotational motion data.</td>
+<td>±10% measurement accuracy</td>
+<td>±5% measurement accuracy</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Motion Detection (2 Hall Effect Sensor)</td>
-<td>Detects whether the vehicle is moving, stopped, or changing direction</td>
-<td>Correct State/ Zero State</td>
-<td>Is able to update motion accurately</td>
+<td>Motion Detection (2 Hall Effect Sensors)</td>
+<td>Determines whether the vehicle is moving, stopped, or changing direction by detecting motion states.</td>
+<td>Correct identification of motion/zero state</td>
+<td>Accurate and continuous motion state updates</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
 <td>Reaction Time</td>
-<td>Time required for motion changes to be detected and reported</td>
-<td>Less than 2 milliseconds</td>
-<td>Less than 1 millisecond</td>
+<td>Time required for the subsystem to detect motion changes and report updated motion data.</td>
+<td>&lt; 2 ms response time</td>
+<td>&lt; 1 ms response time</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Distance Sensing (Ultrasonic, or IR Sensor)</td>
-<td>Detects nearby obstacles to inform motion state</td>
-<td>Detects objects within 1 ft</td>
-<td>Detects objects within 2ft with adjustable range</td>
-<td style="text-align: center;">No</td>
+<td>Additional Hall Effect Sensors</td>
+<td>Provides additional rotational feedback used for control fin positioning and extended motion monitoring.</td>
+<td>Detect rotational change</td>
+<td>Accurate rotational feedback for fin control</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td>Servo Motors (Control Fins)</td>
+<td>Controls fin movement to assist with vehicle maneuverability and directional adjustments.</td>
+<td>Basic fin actuation</td>
+<td>Responsive fin control based on sensor input</td>
+<td style="text-align: center;">Yes</td>
 </tr>
 </tbody>
 </table>
