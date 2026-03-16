@@ -2,7 +2,7 @@
 title: Module's PCB
 ---
 
-## PCB
+
 ### Hall Effect Sensor Control PCB
 
 This PCB interfaces multiple Hall effect sensors with an ESP32 
