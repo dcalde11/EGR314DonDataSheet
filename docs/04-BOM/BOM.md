@@ -37,5 +37,6 @@ rails, and enable control of the fins from the ESP32-S3-WROOM-N4 microcontroller
 
 ## Resource
 
-The Bill of Materials as a PDF download is available here:  
-[View BOM PDF](https://github.com/dcalde11/EGR314DonDataSheet/raw/15ab942d9b620fcfc445453bc146d6b4d6447fb3/docs/04-BOM/BOMFINALV2.pdf)
+The downloadable version of the Bill of Materials as a PDF and Excel Book is available here:  
+- **PDF Download:** [View BOM PDF](https://github.com/dcalde11/EGR314DonDataSheet/raw/15ab942d9b620fcfc445453bc146d6b4d6447fb3/docs/04-BOM/BOMFINALV2.pdf)  
+- **Excel Download:** [Download BOM XLSX](https://github.com/dcalde11/EGR314DonDataSheet/raw/a62c220934259eb6a816cee3eecf4fced656a430/docs/04-BOM/Bill%20of%20MATERIALS%20FINAL.xlsx)
