@@ -1,55 +1,63 @@
-# PIC18F57Q43 MCC Configuration and Microcontroller Choice
+## Microcontroller Firmware Overview
 
-## MPLabX & MCC Setup
+The system firmware is written in MicroPython and runs on the ESP32-S3-WROOM-N4 microcontroller. The program runs two I²C 
+sensor buses, servo control, UART communication, and a debug system. Its primary purpose is to collect orientation data from 
+Hall effect sensors, estimate vehicle motion, and control servo-driven fins based on sensor feedback.
 
-For this project, I set up the **PIC18F57Q43** in MPLabX using MCC Melody. I enabled all the peripherals we need:  
+### Main System Functions
 
-- **EUSART1** for UART, so we can debug and send info to the team.  
-- **MSSP1** in I2C master mode for talking to the AS5600 Hall effect sensor.  
-- **PWM1_16BIT** to control LEDs and check sensor readings visually.  
-- **ADC** on RA0, in case we want to add analog sensors later.  
-- **GPIO** for status LEDs.  
-- **ICSP** for programming and debugging the chip directly on the board.  
+The firmware performs two main operational tasks:
 
-All the pins I used are conflict-free. The MCLR/RE3 pin is reserved for ICSP, it’s basically needed to program and reset the PIC. The chip has 128 KB of flash and 8 KB of RAM, which is way more than we need right now, so there’s plenty of room if we want to expand the project later. The MCC build went through with no errors, so everything seems to work properly.  
+**Bus 0 – Dead-Reckoning System**
+- Reads yaw and pitch from AS5600 and As5600L magnetic rotary sensors using one I²C bus.
+- Receives speed input from UART communication.
+- Calculates estimated position (x, y, z) using orientation and speed data.
+- Transmits position and speed information back over UART for monitoring.
 
----
+**Bus 1 – Servo Control System**
+- Reads orientation data from sensors on a second I²C bus.
+- Converts the sensor readings into logical servo angles.
+- Generates PWM signals to control two servo motors used to adjust vehicle fins.
 
-## Pin Assignments
+### Peripheral Interfaces
 
-Here’s a breakdown of the pins we’re using for each peripheral:
+The ESP32-S3 utilizes several integrated peripherals to support the system:
 
-| Function       | Peripheral     | Pin   | Notes                     |
-|----------------|---------------|-------|---------------------------|
-| UART TX        | EUSART1       | RC6   | Debugging / team comm     |
-| UART RX        | EUSART1       | RC7   | Debugging / team comm     |
-| I2C SCL        | MSSP1         | RC3   | AS5600 clock line         |
-| I2C SDA        | MSSP1         | RC4   | AS5600 data line          |
-| PWM LED        | PWM1_16BIT    | RC2   | Visual check for sensors  |
-| Status LED GPIO| GPIO          | RA2   | General status indicator  |
-| ADC Input      | ADC           | RA0   | Optional analog input     |
-| MCLR           | ICSP          | RE3   | Reserved for ICSP/program |
+| Peripheral | Function |
+|-----------|----------|
+| I²C Bus 0 | Sensor communication for dead-reckoning calculations |
+| I²C Bus 1 | Sensor communication for servo control |
+| UART2 | Speed input and telemetry communication |
+| PWM | Servo motor control |
+| GPIO | Status LEDs, debug inputs, and user interface buttons |
 
- MCLR/RE3 is “exclusively acquired” by the ICSP module.
+### Debug and Monitoring System
 
----
+A debug mode allows system monitoring during testing and development.
 
-## PIC18F57Q43 Pin Images
+Debug mode can be triggered by:
+- **GPIO5 button** (falling edge trigger)
+- **GPIO23 external signal** (rising edge trigger)
 
-![Pin Diagram](https://raw.githubusercontent.com/dcalde11/EGR314DonDataSheet/a67084c9d3d6aa6c7e49bd3d9a57a410ac671713/docs/08-MircoController/PINSS.png)
+When enabled:
+- System LEDs blink to indicate debug status.
+- Normal sensor processing and servo control operations pause.
+- The system can be toggled in and out of debug mode during operation.
 
+### Sensor Data Processing
 
+Sensor readings are filtered using exponential smoothing to reduce noise and improve stability:
 
----
+```
+filtered = α(new reading) + (1 − α)(previous value)
+```
 
-## Final Microcontroller Choice
+A smoothing constant of α = 0.3 is used to stabilize the yaw and pitch measurements before they are used in motion calculations or servo control.
 
-**Chosen MCU:** PIC18F57Q43 (Surface Mount)
+This filtering is necessary because the Hall effect sensors measure rotational position over a 0–360° range, while the servo motors operate within a 0–180° range. To properly translate sensor data into usable servo commands, the sensor readings are first stabilized and then mapped using a piecewise conversion function. This function constrains the values within defined limits and converts the full rotational measurement into a logical servo range.
 
-### Why I Picked It
+### System Startup Behavior
 
-I chose the PIC18F57Q43 because it has all the peripherals we need built-in, including UART, I2C, PWM, ADC, and GPIO, which makes the design and programming easier. It has over 32 I/O pins, providing room for LEDs, sensors, and potential 
-future expansions, such as a second connector. It has roughly 128 KB of flash and 8 KB of RAM, meaning that memory limitations won’t be a concern for our project. Its 64 MHz HFINTOSC clock ensures smooth PWM, fast I2C communication, and stable 
-UART performance. The on-chip ICSP support allows us to program and debug the microcontroller without removing it from the board, like the snap tool we have been using for the PIC18F47K42. Additionally, the PIC18F57Q43 comes in both surface 
-mount and DIP packages, making prototyping flexible. Finally, full MCC Melody support ensures that code generation and peripheral configuration are quick and reliable.
+During startup the firmware waits for a UART handshake signal before beginning normal operation. If no signal is received within five seconds, the system performs a short automatic debug cycle before continuing with normal operation. If uart is recieved within that timeframe the intial debug cycle is skipped and operates as normal.
 
+This startup process ensures the system can synchronize with external subsystems while still operating independently if communication is unavailable.
