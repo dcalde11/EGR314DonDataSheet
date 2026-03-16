@@ -815,6 +815,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pcb-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCB Resources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PCB Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3d-and-board-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      3D and Board Images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloads
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1027,6 +1060,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pcb-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCB Resources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PCB Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3d-and-board-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      3D and Board Images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloads
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1054,9 +1120,39 @@
 
 <h2 id="pcb">PCB</h2>
 <h3 id="hall-effect-sensor-control-pcb">Hall Effect Sensor Control PCB</h3>
-<p>This PCB interfaces multiple Hall effect sensors with an ESP32 microcontroller for magnetic field detection and system control. The board includes a regulated power system that converts a +12 V input into stable +5 V and +3.3 V rails using switching regulators and filtering components. The +3.3 V rail powers the ESP32 module and Hall effect sensor ICs, while the +5 V rail supports servo outputs and auxiliary circuitry.</p>
-<p>Two I²C buses are implemented using digital Hall effect sensors with pull-up resistors and decoupling capacitors to ensure reliable communication. User interface elements such as push buttons, status LEDs, and debugging connectors are included for monitoring and testing. Additional connectors provide outputs for servo control and other external peripherals.</p>
-<p>Test points are distributed across the board for key signals and power rails, simplifying debugging and validation during development.</p>
+<p>This PCB interfaces multiple Hall effect sensors with an ESP32 
+microcontroller for magnetic field detection and system control. The board 
+includes a regulated power system that converts a +12 V input into stable 
++5 V and +3.3 V rails using switching regulators and filtering components. 
+The +3.3 V rail powers the ESP32 module and Hall effect sensor ICs, while 
+the +5 V rail supports servo outputs and auxiliary circuitry.</p>
+<p>Two I²C buses are implemented using digital Hall effect sensors with pull-
+up resistors and decoupling capacitors to ensure reliable communication. 
+User interface elements such as push buttons, status LEDs, and debugging 
+connectors are included for monitoring and testing. Additional connectors 
+provide outputs for servo control and other external peripherals.</p>
+<p>Test points are distributed across the board for key signals and power 
+rails, simplifying debugging and validation during development.</p>
+<h2 id="pcb-resources">PCB Resources</h2>
+<p>The Hall Effect Sensor Control PCB interfaces multiple Hall effect sensors 
+with the ESP32 microcontroller, provides regulated power rails, and 
+supports servo control and debugging.</p>
+<h3 id="3d-and-board-images">3D and Board Images</h3>
+<ul>
+<li><strong>3D View of PCB:</strong><br>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/dcalde11/EGR314DonDataSheet/raw/8916ebebba7e6873621c8a66df29b36d032fd23d/docs/06-PCB/3DView.png" data-desc-position="bottom"><img alt="3D PCB View" src="https://github.com/dcalde11/EGR314DonDataSheet/raw/8916ebebba7e6873621c8a66df29b36d032fd23d/docs/06-PCB/3DView.png"></a>  </li>
+<li><strong>Whole PCB Layout:</strong><br>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/dcalde11/EGR314DonDataSheet/raw/8916ebebba7e6873621c8a66df29b36d032fd23d/docs/06-PCB/WHOLEPCB.png" data-desc-position="bottom"><img alt="Whole PCB" src="https://github.com/dcalde11/EGR314DonDataSheet/raw/8916ebebba7e6873621c8a66df29b36d032fd23d/docs/06-PCB/WHOLEPCB.png"></a>  </li>
+<li><strong>Front Side Power Section:</strong><br>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/dcalde11/EGR314DonDataSheet/raw/8916ebebba7e6873621c8a66df29b36d032fd23d/docs/06-PCB/Front_Power_PCB.png" data-desc-position="bottom"><img alt="Front Power PCB" src="https://github.com/dcalde11/EGR314DonDataSheet/raw/8916ebebba7e6873621c8a66df29b36d032fd23d/docs/06-PCB/Front_Power_PCB.png"></a>  </li>
+<li><strong>Back Ground Layer:</strong><br>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/dcalde11/EGR314DonDataSheet/raw/0cc5e27c3bc17a7d2334c2a681f571045fff1c7e/docs/06-PCB/Back_Ground_PCB.png" data-desc-position="bottom"><img alt="Back PCB" src="https://github.com/dcalde11/EGR314DonDataSheet/raw/0cc5e27c3bc17a7d2334c2a681f571045fff1c7e/docs/06-PCB/Back_Ground_PCB.png"></a>  </li>
+</ul>
+<h3 id="downloads">Downloads</h3>
+<ul>
+<li><strong>Gerber Files (for fabrication):</strong> <a href="https://github.com/dcalde11/EGR314DonDataSheet/raw/8916ebebba7e6873621c8a66df29b36d032fd23d/docs/06-PCB/314_HallEffectGerberV2.zip">Download 314_HallEffectGerberV2.zip</a>  </li>
+<li><strong>DFM Analysis Report (JLCPCB):</strong> <a href="https://github.com/dcalde11/EGR314DonDataSheet/raw/8916ebebba7e6873621c8a66df29b36d032fd23d/docs/06-PCB/DFM%20analysis%20report_JLCDFM_314_HallEffectGerberV2.zip.pdf">Download PDF</a></li>
+</ul>
 
 
 
