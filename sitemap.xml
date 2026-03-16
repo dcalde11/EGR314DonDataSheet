@@ -36,6 +36,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://embedded-systems-design.github.io/EGR314DataSheetTemplate/07-Power%20Budget/powerbudget/</loc>
+         <lastmod>2026-03-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://embedded-systems-design.github.io/EGR314DataSheetTemplate/08-MircoController/MicroController/</loc>
          <lastmod>2026-03-16</lastmod>
          <changefreq>daily</changefreq>
