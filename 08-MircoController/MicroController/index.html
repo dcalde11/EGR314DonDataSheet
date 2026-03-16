@@ -897,6 +897,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#microcontroller-pin-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microcontroller Pin Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microcontroller Pin Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pin-usage-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pin Usage Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1099,6 +1123,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#microcontroller-pin-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microcontroller Pin Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microcontroller Pin Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pin-usage-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pin Usage Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1187,8 +1235,116 @@ Hall effect sensors, estimate vehicle motion, and control servo-driven fins base
 <p>A smoothing constant of α = 0.3 is used to stabilize the yaw and pitch measurements before they are used in motion calculations or servo control.</p>
 <p>This filtering is necessary because the Hall effect sensors measure rotational position over a 0–360° range, while the servo motors operate within a 0–180° range. To properly translate sensor data into usable servo commands, the sensor readings are first stabilized and then mapped using a piecewise conversion function. This function constrains the values within defined limits and converts the full rotational measurement into a logical servo range.</p>
 <h3 id="system-startup-behavior">System Startup Behavior</h3>
-<p>During startup the firmware waits for a UART handshake signal before beginning normal operation. If no signal is received within five seconds, the system performs a short automatic debug cycle before continuing with normal operation. If uart is recieved within that timeframe the intial debug cycle is skipped and operates as normal.</p>
+<p>During startup the firmware waits for a UART handshake signal before beginning normal operation. If no signal is received within five seconds, the system performs a short 
+automatic debug cycle before continuing with normal operation. If uart is recieved within that timeframe the intial debug cycle is skipped and operates as normal.</p>
 <p>This startup process ensures the system can synchronize with external subsystems while still operating independently if communication is unavailable.</p>
+<h2 id="microcontroller-pin-connections">Microcontroller Pin Connections</h2>
+<p>The ESP32-S3-WROOM-N4 microcontroller interfaces with sensors, actuators, communication peripherals, and debugging hardware.<br>
+The table below summarizes the GPIO assignments used by the firmware and PCB design.</p>
+<table>
+<thead>
+<tr>
+<th>GPIO</th>
+<th>Peripheral / Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPIO41</td>
+<td>I²C Bus 0 SDA</td>
+<td>Software I²C data line for Bus 0 sensors</td>
+</tr>
+<tr>
+<td>GPIO42</td>
+<td>I²C Bus 0 SCL</td>
+<td>Software I²C clock line for Bus 0 sensors</td>
+</tr>
+<tr>
+<td>GPIO40</td>
+<td>I²C Bus 1 SDA</td>
+<td>Hardware I²C data line for Bus 1 sensors</td>
+</tr>
+<tr>
+<td>GPIO39</td>
+<td>I²C Bus 1 SCL</td>
+<td>Hardware I²C clock line for Bus 1 sensors</td>
+</tr>
+<tr>
+<td>GPIO10</td>
+<td>UART2 RX</td>
+<td>Receives speed and handshake data</td>
+</tr>
+<tr>
+<td>GPIO12</td>
+<td>UART2 TX</td>
+<td>Transmits telemetry and system data</td>
+</tr>
+<tr>
+<td>GPIO8</td>
+<td>Servo Motor A</td>
+<td>PWM output controlling fin servo A</td>
+</tr>
+<tr>
+<td>GPIO18</td>
+<td>Servo Motor B</td>
+<td>PWM output controlling fin servo B</td>
+</tr>
+<tr>
+<td>GPIO4</td>
+<td>LED 1 (Bus 0 – Sensor 0x36)</td>
+<td>Activity indicator for Bus 0 sensor</td>
+</tr>
+<tr>
+<td>GPIO5</td>
+<td>LED 2 (Bus 0 – Sensor 0x40)</td>
+<td>Activity indicator for Bus 0 sensor</td>
+</tr>
+<tr>
+<td>GPIO6</td>
+<td>LED 3 (Bus 1 – Sensor 0x36)</td>
+<td>Activity indicator for Bus 1 sensor</td>
+</tr>
+<tr>
+<td>GPIO7</td>
+<td>LED 4 (Bus 1 – Sensor 0x40)</td>
+<td>Activity indicator for Bus 1 sensor</td>
+</tr>
+<tr>
+<td>GPIO15</td>
+<td>Bus Select Button</td>
+<td>Toggles between Bus 0 and Bus 1 operation</td>
+</tr>
+<tr>
+<td>GPIO16</td>
+<td>Debug Button</td>
+<td>Manually toggles debug mode</td>
+</tr>
+<tr>
+<td>GPIO9</td>
+<td>Debug Signal Input</td>
+<td>External signal trigger for debug mode</td>
+</tr>
+<tr>
+<td>GPIO19</td>
+<td>USB D−</td>
+<td>USB communication line</td>
+</tr>
+<tr>
+<td>GPIO20</td>
+<td>USB D+</td>
+<td>USB communication line</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pin-usage-summary">Pin Usage Summary</h3>
+<ul>
+<li><strong>Two I²C buses</strong> are used to isolate sensor communication for different subsystems.</li>
+<li><strong>UART2</strong> provides speed input and telemetry communication between modules.</li>
+<li><strong>PWM outputs</strong> control two servo motors responsible for adjusting the vehicle fins.</li>
+<li><strong>GPIO LEDs</strong> provide visual indicators for sensor activity and debugging.</li>
+<li><strong>Debug and bus selection buttons</strong> allow runtime system control during testing and development.</li>
+</ul>
 
 
 
