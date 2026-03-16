@@ -1,3 +1,10 @@
+---
+title: Module's Power Budget
+tags:
+- tag1
+- tag2
+---
+
 ## Power Budget ##
 
 The power budget for the 3D positioning system was developed to estimate the total current and power requirements of all major components in the design. The system is powered by a 12 V, 6 A external wall supply, which feeds voltage regulators that generate the required 3.3 V and 5 V power rails.
