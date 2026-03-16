@@ -4,16 +4,21 @@ title: Module Schematic
 
 ## Overview
 
-This schematic is designed to support the module’s functionality, power distribution, and controller integration. It highlights the connections between the Hall effect sensor, power supply circuitry, and the microcontroller interface.
+The schematic supports the module’s functionality, power distribution, and 
+microcontroller integration. It shows the connections between the major 
+components: the AS5600L-ASOM and AS5600-ASOM Hall effect sensors, the ESP32-
+S3-WROOM-N4 microcontroller, the TLV73312PDBVR and TPS565242DRLR voltage 
+regulators, the 1142 RC servo motors, and the LTST-C190GKT LEDs.
 
-The design ensures:
+The design ensures:  
 - Stable and regulated power delivery  
 - Reliable signal conditioning  
-- Proper controller interfacing  
-- System protection and filtering where required  
+- Correct microcontroller interfacing  
+- System protection and filtering where required
 
 
-<img width="1062" height="733" alt="image" src="https://github.com/user-attachments/assets/8ddca327-cc1f-4ce9-a8fc-5bcd77c9466d" />
+- **Schematic Image Preview:**  
+  ![Schematic Final V2](https://github.com/dcalde11/EGR314DonDataSheet/raw/cfbef2b9d225c8a2ee0a2af7c451ac4c43d22390/docs/05-Schematic/SchematicFinalV2.png)
 
 **Figure 1:**  schematic of the Hall Effect module.
 
@@ -21,5 +26,5 @@ The design ensures:
 
 ## Resources
 
-- The schematic PDF is available [*here*](https://github.com/dcalde11/EGR314DonDataSheet/blob/f52198a34523fc47375b122d1c9932c9871e1892/docs/05-Schematic/314_HallEffect.pdf).  
-- The complete project ZIP folder is available [*here*](https://github.com/dcalde11/EGR314DonDataSheet/blob/7421da34dda7b92c2c98fd5cb48e675ecc7744d5/docs/05-Schematic/314_HallEffect_DCalderon.zip).
+- **Schematic PDF:** [View 314_HallEffect.pdf](https://github.com/dcalde11/EGR314DonDataSheet/raw/cfbef2b9d225c8a2ee0a2af7c451ac4c43d22390/docs/05-Schematic/314_HallEffect.pdf)  
+- **Complete Project ZIP:** [Download 314_HallEffectFinalV2.zip](https://github.com/dcalde11/EGR314DonDataSheet/raw/cfbef2b9d225c8a2ee0a2af7c451ac4c43d22390/docs/05-Schematic/314_HallEffectFinalV2.zip)  
