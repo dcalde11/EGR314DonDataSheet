@@ -18,6 +18,6 @@ reliable operation of components of the system. Below is an image as well as a p
 
 ## Power Budget Files
 
- ![Power Budget Image](https://github.com/dcalde11/EGR314DonDataSheet/blob/f8b59d818f780010123a9663db23587123048be9/docs/07-Power%20Budget/POWERB.png)
+ ![Power Budget](https://raw.githubusercontent.com/dcalde11/EGR314DonDataSheet/f8b59d818f780010123a9663db23587123048be9/docs/07-Power%20Budget/POWERB.png)
 
 [Download PDF](https://github.com/dcalde11/EGR314DonDataSheet/blob/f8b59d818f780010123a9663db23587123048be9/docs/07-Power%20Budget/BPOWER%20(1).pdf)
