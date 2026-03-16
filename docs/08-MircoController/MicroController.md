@@ -58,6 +58,40 @@ This filtering is necessary because the Hall effect sensors measure rotational p
 
 ### System Startup Behavior
 
-During startup the firmware waits for a UART handshake signal before beginning normal operation. If no signal is received within five seconds, the system performs a short automatic debug cycle before continuing with normal operation. If uart is recieved within that timeframe the intial debug cycle is skipped and operates as normal.
+During startup the firmware waits for a UART handshake signal before beginning normal operation. If no signal is received within five seconds, the system performs a short 
+automatic debug cycle before continuing with normal operation. If uart is recieved within that timeframe the intial debug cycle is skipped and operates as normal.
 
 This startup process ensures the system can synchronize with external subsystems while still operating independently if communication is unavailable.
+
+## Microcontroller Pin Connections
+
+The ESP32-S3-WROOM-N4 microcontroller interfaces with sensors, actuators, communication peripherals, and debugging hardware.  
+The table below summarizes the GPIO assignments used by the firmware and PCB design.
+
+| GPIO | Peripheral / Function | Description |
+|-----|----------------------|-------------|
+| GPIO41 | I²C Bus 0 SDA | Software I²C data line for Bus 0 sensors |
+| GPIO42 | I²C Bus 0 SCL | Software I²C clock line for Bus 0 sensors |
+| GPIO40 | I²C Bus 1 SDA | Hardware I²C data line for Bus 1 sensors |
+| GPIO39 | I²C Bus 1 SCL | Hardware I²C clock line for Bus 1 sensors |
+| GPIO10 | UART2 RX | Receives speed and handshake data |
+| GPIO12 | UART2 TX | Transmits telemetry and system data |
+| GPIO8 | Servo Motor A | PWM output controlling fin servo A |
+| GPIO18 | Servo Motor B | PWM output controlling fin servo B |
+| GPIO4 | LED 1 (Bus 0 – Sensor 0x36) | Activity indicator for Bus 0 sensor |
+| GPIO5 | LED 2 (Bus 0 – Sensor 0x40) | Activity indicator for Bus 0 sensor |
+| GPIO6 | LED 3 (Bus 1 – Sensor 0x36) | Activity indicator for Bus 1 sensor |
+| GPIO7 | LED 4 (Bus 1 – Sensor 0x40) | Activity indicator for Bus 1 sensor |
+| GPIO15 | Bus Select Button | Toggles between Bus 0 and Bus 1 operation |
+| GPIO16 | Debug Button | Manually toggles debug mode |
+| GPIO9 | Debug Signal Input | External signal trigger for debug mode |
+| GPIO19 | USB D− | USB communication line |
+| GPIO20 | USB D+ | USB communication line |
+
+### Pin Usage Summary
+
+- **Two I²C buses** are used to isolate sensor communication for different subsystems.
+- **UART2** provides speed input and telemetry communication between modules.
+- **PWM outputs** control two servo motors responsible for adjusting the vehicle fins.
+- **GPIO LEDs** provide visual indicators for sensor activity and debugging.
+- **Debug and bus selection buttons** allow runtime system control during testing and development.
