@@ -1060,9 +1060,22 @@
 
 <h2 id="overview">Overview</h2>
 <p><strong>Bill of Materials (BOM) Description</strong></p>
-<p>The Bill of Materials (BOM) lists all electronic components required for the 3D positioning system prototype. It includes part names, quantities, unit and total costs, manufacturers, manufacturer part numbers, supplier information, and schematic
-reference designators. The BOM ensures accurate component sourcing and cost estimation for both prototype and production builds, while each component also includes its designated supplier link and datasheet.</p>
-<p>The main components consist of two AS5600 sensors and two AS5600L sensors, with the primary microcontroller being the ESP32-S3-WROOM-N4. Additional components support debugging functionality and control two servo motors. The remaining components consist of supporting parts such as resistors, capacitors, and other passive elements used to implement the 3.3 V and 5 V power rails from a 12 V, 6 A wall power supply.</p>
+<p>The Bill of Materials (BOM) lists all electronic components required for the 3D positioning system 
+prototype. It includes part names, quantities, unit and total costs, manufacturers, manufacturer part 
+numbers, supplier information, and schematic reference designators. The BOM ensures accurate component 
+sourcing and cost estimation for both prototype and production builds, while each component also includes 
+its designated supplier link and datasheet.</p>
+<p>The Bill of Materials (BOM) lists all components required for the 3D positioning system prototype. The main 
+components include:</p>
+<ul>
+<li><strong>Motion / Speed Sensors:</strong> AS5600L-ASOM + AS5600-ASOM  </li>
+<li><strong>Voltage Regulators:</strong> TLV73312PDBVR (3.3V) + TPS565242DRLR (5V)  </li>
+<li><strong>LED Indicators:</strong> LTST-C190GKT  </li>
+<li><strong>Barrel Jack / Jumpers:</strong> PJ-070AH-SMT-TR</li>
+<li><strong>Servo Motors (Control Fins):</strong> 1142 RC Servo Motor  </li>
+</ul>
+<p>These components, together with supporting resistors and capacitors, make possible the 3.3 V and 5 V power 
+rails, and enable control of the fins from the ESP32-S3-WROOM-N4 microcontroller.</p>
 <h2 id="bill-of-materials">Bill of Materials</h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/dcalde11/EGR314DonDataSheet/raw/15ab942d9b620fcfc445453bc146d6b4d6447fb3/docs/04-BOM/BOMV2Final.png" data-desc-position="bottom"><img alt="BOM" src="https://github.com/dcalde11/EGR314DonDataSheet/raw/15ab942d9b620fcfc445453bc146d6b4d6447fb3/docs/04-BOM/BOMV2Final.png"></a></p>
 <h2 id="resource">Resource</h2>
