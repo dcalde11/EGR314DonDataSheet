@@ -7,11 +7,11 @@ tags:
 <center>
 <font size= "6">Donovan Calderon Datasheet</font><br>
 as part of<br>
-<font size= "8"> Project Name</font><br>
+<font size= "8"> Submersible Exploration Device </font><br>
 for<br>
 <font size= "5"> Team 307 </font><br>
 
-**Submission: month, DD, YYYY**
+**Submission: March, 15, 2026**
 </center>
 
 ## Introduction
@@ -58,9 +58,13 @@ using the concept of bevel gears for the mounting of the
 motor controlling the propulsion, as well as the 
 developemnt of ALL code across all subsystems.
 Below are a few links that highlight my contributions
-with the Team Website as well as my Teammates websites 
+within the Team Website as well as my Teammates websites 
 
-* Add context that ties into the link to your [307 Team Report.](https://egr-314-team-307-spring-2026.github.io/Team307.github.io/)
+## Project Links Within Team-Website
+
+- [Sequence Diagram of Team Communication](https://egr-314-team-307-spring-2026.github.io/Team307.github.io/04-Team-Block-Diagram/Team-Diagram/)
+
+- [Chosen Design](https://egr-314-team-307-spring-2026.github.io/Team307.github.io/02-Concept-Design/Design/)
 
 ### Direct Links 
 Here are links across my website that help you navigate 
@@ -71,7 +75,7 @@ Subsystem
 * To review the details and relationships between the system’s components, refer to the [Block Diagram](https://dcalde11.github.io/EGR314DonDataSheet/02-Block-Diagram/Block-Diagram/).
 * To review the system’s components, refer to the [Component Selection](https://dcalde11.github.io/EGR314DonDataSheet/03-Component-Selection/Component-Selection/).
 * To review the firmware implementation, refer to the [Microcontroller Code](https://dcalde11.github.io/EGR314DonDataSheet/08-MircoController/MicroController/).
-*  To review power distribution, refer to the [Power Budget](https://dcalde11.github.io/EGR314DonDataSheet/09-Power-Budget/Power-Budget/).
+*  To review power distribution, refer to the [Power Budget](https://dcalde11.github.io/EGR314DonDataSheet/07-Power%20Budget/powerbudget/).
 * To review the cost of components in the subsystem, refer to the [Bill of Materials](https://dcalde11.github.io/EGR314DonDataSheet/04-BOM/BOM/).
 * To review the layout of the individual subsystem, refer to the [Schematic](https://dcalde11.github.io/EGR314DonDataSheet/05-Schematic/schematic/).
 * To review the physical board layout, refer to the [PCB Design](https://dcalde11.github.io/EGR314DonDataSheet/06-PCB/pcb/).
