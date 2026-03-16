@@ -10,7 +10,7 @@ tags:
 
 **Bill of Materials (BOM) Description**
 
-Here is your text **cleaned up grammatically while keeping your wording and intent**:
+
 
 The Bill of Materials (BOM) lists all electronic components required for the 3D positioning system prototype. It includes part names, quantities, unit and total costs, manufacturers, manufacturer part numbers, supplier information, and schematic
 reference designators. The BOM ensures accurate component sourcing and cost estimation for both prototype and production builds, while each component also includes its designated supplier link and datasheet.
