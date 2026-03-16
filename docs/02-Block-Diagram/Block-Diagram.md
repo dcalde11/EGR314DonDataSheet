@@ -7,8 +7,9 @@ tags:
 
 ## Block Diagram Overview
 
-This block diagram illustrates a simplified overall system architecture centered around the ESP32 microcontroller. It shows the major components with their mainstream connections, how power is supplied and regulated, the flow of information, 
-and how the subsystem interfaces with other team components and programming hardware through input and output connections.
+This block diagram illustrates a simplified overall system architecture centered around the ESP32 microcontroller. It shows the major components with their mainstream 
+connections, how power is supplied and regulated, the flow of information, and how the subsystem interfaces with other team components and programming hardware through 
+input and output connections.
 
 ---
 
