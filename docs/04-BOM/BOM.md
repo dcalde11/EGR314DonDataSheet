@@ -19,11 +19,11 @@ The main components consist of two AS5600 sensors and two AS5600L sensors, with 
 
 
   
+## Bill of Materials
 
-## Bill of Materials 
-![BOM](https://raw.githubusercontent.com/dcalde11/EGR314DonDataSheet/9d5cac22a97103e60f08ce48ce3cd97e1df63674/docs/04-BOM/bom.png)
- 
+![BOM](https://github.com/dcalde11/EGR314DonDataSheet/raw/15ab942d9b620fcfc445453bc146d6b4d6447fb3/docs/04-BOM/BOMV2Final.png)
 
-## Resouce
+## Resource
 
-The Bill of Material as a PDF download is available [View BOM PDF](https://raw.githubusercontent.com/dcalde11/EGR314DonDataSheet/62f5b85da602b5edef347d28288260480803b96a/docs/04-BOM/boMPDF.pdf)
+The Bill of Materials as a PDF download is available here:  
+[View BOM PDF](https://github.com/dcalde11/EGR314DonDataSheet/raw/15ab942d9b620fcfc445453bc146d6b4d6447fb3/docs/04-BOM/BOMFINALV2.pdf)
