@@ -55,7 +55,7 @@ All messages listed below exist inside the message data field of the class proto
 
 **Total Bytes:** Variable (typically 8–12)
 
-**Used For:** Motor → Hall subsystem
+**Used For:** Motor to Hall subsystem
 
 **Example:**
 [1, 1, 2, 25.5
@@ -72,7 +72,7 @@ All messages listed below exist inside the message data field of the class proto
 
 **Total Bytes:** 4
 
-**Used For:** Any subsystem → All (broadcast)
+**Used For:** Any subsystem to All (broadcast)
 
 **Example:**
 [2, 1, 0, 1]
@@ -93,7 +93,7 @@ All messages listed below exist inside the message data field of the class proto
 
 **Total Bytes:** 20
 
-**Used For:** Hall subsystem → Broadcast
+**Used For:** Hall subsystem to Broadcast
 
 **Example:**
 
