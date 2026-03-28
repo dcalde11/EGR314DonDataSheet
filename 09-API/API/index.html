@@ -26,7 +26,7 @@
 
     
       
-        <title>API - EGR 314 Donovan's Data Sheet</title>
+        <title>API – Message Definitions (Hall Effect / Position Subsystem) - EGR 314 Donovan's Data Sheet</title>
       
     
     
@@ -89,6 +89,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#api-message-definitions-hall-effect-position-subsystem" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -120,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              API
+              API – Message Definitions (Hall Effect / Position Subsystem)
             
           </span>
         </div>
@@ -909,16 +914,57 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    API – Message Definitions (Hall Effect / Position Subsystem)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    API
+    API – Message Definitions (Hall Effect / Position Subsystem)
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1005,6 +1051,25 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1027,9 +1092,401 @@
   
 
 
-  <h1>API</h1>
-
-
+<h1 id="api-message-definitions-hall-effect-position-subsystem">API – Message Definitions (Hall Effect / Position Subsystem)</h1>
+<h2 id="overview">Overview</h2>
+<p>This subsystem communicates over a UART daisy-chain network using a structured message protocol while its foundation 
+comes from the <a href="https://egr-314-team-307-spring-2026.github.io/Team307.github.io/04-Team-Block-Diagram/Team-Diagram/">Team 307 – Message Types (uint16_t)</a> some chabges were made and will be reflected in 
+the team website. Each message is framed and includes sender/receiver addressing.</p>
+<ul>
+<li><strong>START BYTE:</strong> 0x7E  </li>
+<li><strong>END BYTE:</strong> 0x7F  </li>
+<li><strong>Broadcast ID:</strong> 0x00  </li>
+<li><strong>Board ID:</strong> 0x02  </li>
+</ul>
+<p>All messages listed below exist inside the message data field of the class protocol.</p>
+<hr>
+<h1 id="message-summary">Message Summary</h1>
+<h2 id="messages-sent-by-this-subsystem">Messages Sent by This Subsystem</h2>
+<table>
+<thead>
+<tr>
+<th>Message Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>POSITION_UPDATE</td>
+<td>Sends position (x,y,z) and speed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="messages-received-by-this-subsystem">Messages Received by This Subsystem</h2>
+<table>
+<thead>
+<tr>
+<th>Message Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>SPEED_UPDATE</td>
+<td>Updates system velocity</td>
+</tr>
+<tr>
+<td>2</td>
+<td>DEBUG_TOGGLE</td>
+<td>Toggles debug mode</td>
+</tr>
+<tr>
+<td>4</td>
+<td>BUS_TOGGLE</td>
+<td>Switches active bus</td>
+</tr>
+</tbody>
+</table>
+<h2 id="broadcast-messages-acted-on">Broadcast Messages Acted On</h2>
+<table>
+<thead>
+<tr>
+<th>Message Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>DEBUG_TOGGLE</td>
+<td>System-wide debug control</td>
+</tr>
+<tr>
+<td>4</td>
+<td>BUS_TOGGLE</td>
+<td>System-wide bus control</td>
+</tr>
+</tbody>
+</table>
+<h1 id="detailed-message-definitions">Detailed Message Definitions</h1>
+<h2 id="message-type-1-speed-update">Message Type 1 – Speed Update</h2>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Variable Name</th>
+<th>Type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>message_type</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>1</td>
+<td>Identifier</td>
+</tr>
+<tr>
+<td>2</td>
+<td>sender_id</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>Sender</td>
+</tr>
+<tr>
+<td>3</td>
+<td>receiver_id</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>Target</td>
+</tr>
+<tr>
+<td>4–n</td>
+<td>speed</td>
+<td>float</td>
+<td>-100.0</td>
+<td>100.0</td>
+<td>Velocity</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total Bytes:</strong> Variable (typically 8–12)</p>
+<p><strong>Used For:</strong> Motor → Hall subsystem</p>
+<p><strong>Example:</strong>
+[1, 1, 2, 25.5</p>
+<h2 id="message-type-2-debug-toggle">Message Type 2 – Debug Toggle</h2>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Variable Name</th>
+<th>Type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>message_type</td>
+<td>uint8_t</td>
+<td>2</td>
+<td>2</td>
+<td>Identifier</td>
+</tr>
+<tr>
+<td>2</td>
+<td>sender_id</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>Sender</td>
+</tr>
+<tr>
+<td>3</td>
+<td>receiver_id</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>Target</td>
+</tr>
+<tr>
+<td>4</td>
+<td>debug_state</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>1</td>
+<td>Toggle debug</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total Bytes:</strong> 4</p>
+<p><strong>Used For:</strong> Any subsystem → All (broadcast)</p>
+<p><strong>Example:</strong>
+[2, 1, 0, 1]</p>
+<h2 id="message-type-3-position-update">Message Type 3 – Position Update</h2>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Variable Name</th>
+<th>Type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>message_type</td>
+<td>uint8_t</td>
+<td>3</td>
+<td>3</td>
+<td>Identifier</td>
+</tr>
+<tr>
+<td>2</td>
+<td>sender_id</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>Sender</td>
+</tr>
+<tr>
+<td>3</td>
+<td>receiver_id</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>Target</td>
+</tr>
+<tr>
+<td>4–7</td>
+<td>x</td>
+<td>float</td>
+<td>-1000</td>
+<td>1000</td>
+<td>X position</td>
+</tr>
+<tr>
+<td>8–11</td>
+<td>y</td>
+<td>float</td>
+<td>-1000</td>
+<td>1000</td>
+<td>Y position</td>
+</tr>
+<tr>
+<td>12–15</td>
+<td>z</td>
+<td>float</td>
+<td>-1000</td>
+<td>1000</td>
+<td>Z position</td>
+</tr>
+<tr>
+<td>16–19</td>
+<td>speed</td>
+<td>float</td>
+<td>-100</td>
+<td>100</td>
+<td>Velocity</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total Bytes:</strong> 20</p>
+<p><strong>Used For:</strong> Hall subsystem → Broadcast</p>
+<p><strong>Example:</strong></p>
+<p>[3, 2, 0, 1.2, 3.4, 5.6, 2.0]</p>
+<h2 id="message-type-4-bus-toggle">Message Type 4 – Bus Toggle</h2>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Variable Name</th>
+<th>Type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>message_type</td>
+<td>uint8_t</td>
+<td>4</td>
+<td>4</td>
+<td>Identifier</td>
+</tr>
+<tr>
+<td>2</td>
+<td>sender_id</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>Sender</td>
+</tr>
+<tr>
+<td>3</td>
+<td>receiver_id</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>Target</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bus_state</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>1</td>
+<td>Active bus</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total Bytes:</strong> 4</p>
+<p><strong>Used For:</strong> Any subsystem</p>
+<p><strong>Example:</strong>
+[4, 1, 0, 1]</p>
+<h2 id="message-type-5-acknowledgement-ack">Message Type 5 – Acknowledgement (ACK)</h2>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Variable Name</th>
+<th>Type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>message_type</td>
+<td>uint8_t</td>
+<td>5</td>
+<td>5</td>
+<td>Identifier</td>
+</tr>
+<tr>
+<td>2</td>
+<td>sender_id</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>Sender</td>
+</tr>
+<tr>
+<td>3</td>
+<td>receiver_id</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>Target</td>
+</tr>
+<tr>
+<td>4</td>
+<td>original_type</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>Message being acknowledged</td>
+</tr>
+<tr>
+<td>5</td>
+<td>value</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>Returned data</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total Bytes:</strong> 5</p>
+<p><strong>Used For:</strong> Confirmation of valid message reception</p>
+<p><strong>Example:</strong></p>
+<p>[5, 2, 0, 1, 25]</p>
+<h1 id="protocol">Protocol</h1>
+<h2 id="message-handling-rules">Message Handling Rules</h2>
+<ul>
+<li>Messages not addressed to this board are forwarded immediately</li>
+<li>Messages addressed to this board are processed</li>
+<li>Broadcast messages (receiver_id = 0) are processed and forwarded</li>
+<li>Messages sent by this board and returned are discarded</li>
+</ul>
+<h2 id="error-handling">Error Handling</h2>
+<ul>
+<li>Messages without START/END bytes are ignored</li>
+<li>Messages exceeding buffer size are trashed</li>
+<li>Invalid or malformed messages are ignored</li>
+</ul>
+<h2 id="priority-rules">Priority Rules</h2>
+<ol>
+<li>Incoming messages are processed and forwarded first  </li>
+<li>Outgoing messages are sent after processing  </li>
+<li>No communication blocking in daisy-chain network  </li>
+</ol>
+<h2 id="notes-improvements-over-team-spec">Notes / Improvements Over Team Spec</h2>
+<ul>
+<li>Original team design lacked:</li>
+<li>Byte-level structure</li>
+<li>Data type definitions</li>
+<li>Min/Max bounds</li>
+</ul>
 
 
 
