@@ -171,4 +171,73 @@ All messages listed below exist inside the message data field of the class proto
   - Data type definitions
   - Min/Max bounds
 
-Here is my full software implementation [Download Position Code](https://raw.githubusercontent.com/dcalde11/EGR314DonDataSheet/c6dcf42912e47d3d11a0d577efd02034ee74df60/docs/09-API/Positioncode.py)
+---
+
+# Actual Firmware Implementation (Message Handling System)
+
+The firmware runs on an ESP32-S3 using MicroPython and integrates UART communication, a Hall effect sensor via I²C, and LED status indicators. It operates as a real-time node in a daisy-chain messaging system.
+
+---
+
+## UART Communication
+
+The system uses a framed UART protocol with `AZ` (start) and `YB` (end) delimiters. Each message contains a sender ID, receiver ID, and payload.
+
+### Message Types Handled
+- **Receiving:** 1 message type (relay + sensor update input)
+- **Sending:** 1 message type (processed relay output with sensor angle appended)
+
+When a valid frame is received:
+- The message is parsed into sender, receiver, and payload
+- Messages not addressed to the device are ignored or forwarded
+- TX/RX LEDs indicate communication activity
+
+If the sender is `b'G'`, the system appends the latest sensor angle to the payload and forwards it to the next node (`b'E'`).
+
+---
+
+## I²C Sensor System
+
+A Hall effect rotary sensor (address `0x36`) is read using SoftI2C at a fixed rate of 10 Hz.
+
+- Converts raw 12-bit data into a 0–360° angle
+- Stores the latest angle for use in message processing
+- If the sensor is not detected, the system triggers an error state
+
+---
+
+## LED Status Indicators
+
+- **TX (GPIO4):** UART transmission activity  
+- **RX (GPIO5):** UART reception activity  
+- **Sensor OK (GPIO6):** Valid I²C sensor detection  
+- **Error (GPIO7):** Sensor failure or communication fault  
+
+---
+
+## System Behavior
+
+The firmware runs in a continuous non-blocking loop:
+- UART is constantly polled for incoming data  
+- Sensor is updated every 100 ms  
+- Valid messages are processed and forwarded immediately  
+- Invalid frames and buffer overflows are discarded  
+
+---
+
+## Communication Summary
+
+- **Messages Received:** 1 primary type (incoming relay + speed/sensor trigger messages)  
+- **Messages Sent:** 1 primary type (relay output with appended sensor angle)  
+
+---
+
+## Key Design Notes
+
+Compared to the original specification, the implementation:
+- Uses a simplified framed UART protocol (`AZ` / `YB`)
+- Reduces multiple message definitions into a single active relay pipeline
+- Combines sensor reading and communication in one execution loop
+- Prioritizes real-time reliability over strict protocol complexity  
+
+---
