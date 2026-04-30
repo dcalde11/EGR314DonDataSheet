@@ -987,6 +987,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actual-firmware-implementation-micropython" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actual Firmware Implementation (MicroPython)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actual Firmware Implementation (MicroPython)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-communication-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Communication System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensor-acquisition-i2c-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor Acquisition (I²C System)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-status-indication" class="md-nav__link">
+    <span class="md-ellipsis">
+      LED Status Indication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-processing-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Processing Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-timing-and-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Timing and Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling Behavior
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1213,6 +1282,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actual-firmware-implementation-micropython" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actual Firmware Implementation (MicroPython)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actual Firmware Implementation (MicroPython)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-communication-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Communication System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensor-acquisition-i2c-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor Acquisition (I²C System)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-status-indication" class="md-nav__link">
+    <span class="md-ellipsis">
+      LED Status Indication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-processing-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Processing Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-timing-and-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Timing and Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling Behavior
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1411,6 +1549,58 @@ The table below summarizes the GPIO assignments used by the firmware and PCB des
 <li><strong>GPIO LEDs</strong> provide visual indicators for sensor activity and debugging.</li>
 <li><strong>Debug and bus selection buttons</strong> allow runtime system control during testing and development.</li>
 </ul>
+<hr>
+<h2 id="actual-firmware-implementation-micropython">Actual Firmware Implementation (MicroPython)</h2>
+<p>The implemented firmware runs on the ESP32-S3-WROOM-N4 and provides real-time communication between sensors, external devices, and actuators. The system is built around UART messaging, I²C sensor acquisition, and LED-based status indication for debugging and system monitoring.</p>
+<h3 id="core-communication-system">Core Communication System</h3>
+<p>The firmware uses a structured UART packet format with start and end delimiters (<code>AZ</code> and <code>YB</code>) to ensure reliable data transmission. Each message contains:
+- A sender ID
+- A receiver ID
+- A payload containing command or sensor data</p>
+<p>Incoming UART data is buffered and parsed only when a complete valid frame is detected. This prevents partial or corrupted messages from being processed.</p>
+<p>When a message is received and addressed to the device, it is decoded and processed based on the sender type. If the message originates from a designated transmitter node, the system appends the current sensor angle and relays the updated packet to another module.</p>
+<hr>
+<h3 id="sensor-acquisition-i2c-system">Sensor Acquisition (I²C System)</h3>
+<p>The system uses a SoftI2C interface to communicate with a Hall effect rotary sensor. The firmware periodically reads raw sensor data from a fixed register address, then converts the 12-bit value into a physical angle ranging from 0° to 360°.</p>
+<p>To ensure stable readings:
+- Sensor polling is limited to a fixed interval (10 Hz)
+- Read failures are trapped using exception handling
+- A global variable stores the latest valid angle for use in communication logic</p>
+<p>If the sensor is not detected on the I²C bus, the system disables normal processing and triggers an error state.</p>
+<hr>
+<h3 id="led-status-indication">LED Status Indication</h3>
+<p>Four onboard LEDs provide real-time system feedback:
+- <strong>TX LED:</strong> flashes when a UART transmission occurs
+- <strong>RX LED:</strong> flashes when a valid message is received
+- <strong>Sensor OK LED:</strong> indicates successful I²C sensor detection
+- <strong>Error LED:</strong> indicates sensor failure or communication issues</p>
+<p>This allows hardware-level debugging without requiring serial monitoring.</p>
+<hr>
+<h3 id="message-processing-logic">Message Processing Logic</h3>
+<p>When a valid UART frame is received:
+1. The frame is validated using start/end markers<br>
+2. Sender and receiver IDs are extracted<br>
+3. Payload data is parsed<br>
+4. If the message is intended for this device, it is processed  </p>
+<p>If the sender is a recognized upstream node, the system:
+- Combines the received payload with the latest sensor reading
+- Formats a new response message
+- Transmits it to the next node in the communication chain</p>
+<p>This creates a chained data relay system between modules.</p>
+<hr>
+<h3 id="system-timing-and-control">System Timing and Control</h3>
+<p>The firmware operates on a non-blocking loop structure:
+- UART is continuously polled for incoming data
+- Sensor readings are updated at a fixed interval (10 Hz)
+- LED indicators respond instantly to system events</p>
+<p>This ensures deterministic timing without freezing execution during sensor or communication delays.</p>
+<hr>
+<h3 id="error-handling-behavior">Error Handling Behavior</h3>
+<p>The system includes built-in fault detection:
+- If the I²C sensor is not detected, normal operation is paused
+- Communication errors reset the UART buffer to prevent desynchronization
+- Sensor read exceptions are caught to prevent system crashes</p>
+<p>In error states, LEDs provide immediate visual feedback while preserving system stability.</p>
 
 
 
