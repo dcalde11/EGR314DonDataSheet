@@ -95,3 +95,84 @@ The table below summarizes the GPIO assignments used by the firmware and PCB des
 - **PWM outputs** control two servo motors responsible for adjusting the vehicle fins.
 - **GPIO LEDs** provide visual indicators for sensor activity and debugging.
 - **Debug and bus selection buttons** allow runtime system control during testing and development.
+
+---
+
+## Actual Firmware Implementation (MicroPython)
+
+The implemented firmware runs on the ESP32-S3-WROOM-N4 and provides real-time communication between sensors, external devices, and actuators. The system is built around UART messaging, I²C sensor acquisition, and LED-based status indication for debugging and system monitoring.
+
+### Core Communication System
+
+The firmware uses a structured UART packet format with start and end delimiters (`AZ` and `YB`) to ensure reliable data transmission. Each message contains:
+- A sender ID
+- A receiver ID
+- A payload containing command or sensor data
+
+Incoming UART data is buffered and parsed only when a complete valid frame is detected. This prevents partial or corrupted messages from being processed.
+
+When a message is received and addressed to the device, it is decoded and processed based on the sender type. If the message originates from a designated transmitter node, the system appends the current sensor angle and relays the updated packet to another module.
+
+---
+
+### Sensor Acquisition (I²C System)
+
+The system uses a SoftI2C interface to communicate with a Hall effect rotary sensor. The firmware periodically reads raw sensor data from a fixed register address, then converts the 12-bit value into a physical angle ranging from 0° to 360°.
+
+To ensure stable readings:
+- Sensor polling is limited to a fixed interval (10 Hz)
+- Read failures are trapped using exception handling
+- A global variable stores the latest valid angle for use in communication logic
+
+If the sensor is not detected on the I²C bus, the system disables normal processing and triggers an error state.
+
+---
+
+### LED Status Indication
+
+Four onboard LEDs provide real-time system feedback:
+- **TX LED:** flashes when a UART transmission occurs
+- **RX LED:** flashes when a valid message is received
+- **Sensor OK LED:** indicates successful I²C sensor detection
+- **Error LED:** indicates sensor failure or communication issues
+
+This allows hardware-level debugging without requiring serial monitoring.
+
+---
+
+### Message Processing Logic
+
+When a valid UART frame is received:
+1. The frame is validated using start/end markers  
+2. Sender and receiver IDs are extracted  
+3. Payload data is parsed  
+4. If the message is intended for this device, it is processed  
+
+If the sender is a recognized upstream node, the system:
+- Combines the received payload with the latest sensor reading
+- Formats a new response message
+- Transmits it to the next node in the communication chain
+
+This creates a chained data relay system between modules.
+
+---
+
+### System Timing and Control
+
+The firmware operates on a non-blocking loop structure:
+- UART is continuously polled for incoming data
+- Sensor readings are updated at a fixed interval (10 Hz)
+- LED indicators respond instantly to system events
+
+This ensures deterministic timing without freezing execution during sensor or communication delays.
+
+---
+
+### Error Handling Behavior
+
+The system includes built-in fault detection:
+- If the I²C sensor is not detected, normal operation is paused
+- Communication errors reset the UART buffer to prevent desynchronization
+- Sensor read exceptions are caught to prevent system crashes
+
+In error states, LEDs provide immediate visual feedback while preserving system stability.
