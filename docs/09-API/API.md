@@ -177,7 +177,7 @@ All messages listed below exist inside the message data field of the class proto
 
 The firmware runs on an ESP32-S3 using MicroPython and integrates UART communication, a Hall effect sensor via I²C, and LED status indicators. It operates as a real-time node in a daisy-chain messaging system.
 
----
+
 
 ## UART Communication
 
@@ -194,7 +194,7 @@ When a valid frame is received:
 
 If the sender is `b'G'`, the system appends the latest sensor angle to the payload and forwards it to the next node (`b'E'`).
 
----
+
 
 ## I²C Sensor System
 
@@ -204,7 +204,7 @@ A Hall effect rotary sensor (address `0x36`) is read using SoftI2C at a fixed ra
 - Stores the latest angle for use in message processing
 - If the sensor is not detected, the system triggers an error state
 
----
+
 
 ## LED Status Indicators
 
@@ -213,7 +213,6 @@ A Hall effect rotary sensor (address `0x36`) is read using SoftI2C at a fixed ra
 - **Sensor OK (GPIO6):** Valid I²C sensor detection  
 - **Error (GPIO7):** Sensor failure or communication fault  
 
----
 
 ## System Behavior
 
@@ -223,14 +222,14 @@ The firmware runs in a continuous non-blocking loop:
 - Valid messages are processed and forwarded immediately  
 - Invalid frames and buffer overflows are discarded  
 
----
+
 
 ## Communication Summary
 
 - **Messages Received:** 1 primary type (incoming relay + speed/sensor trigger messages)  
 - **Messages Sent:** 1 primary type (relay output with appended sensor angle)  
 
----
+
 
 ## Key Design Notes
 
@@ -241,3 +240,8 @@ Compared to the original specification, the implementation:
 - Prioritizes real-time reliability over strict protocol complexity  
 
 ---
+## Firmware Source Code
+
+You can download the full UART and Angle implementation here:
+
+[Download Basic UART Code](https://raw.githubusercontent.com/dcalde11/EGR314DonDataSheet/4a1f67aaadf7519277476e082b6c2123e0716abe/docs/09-API/BasicCodewithUart.py)
