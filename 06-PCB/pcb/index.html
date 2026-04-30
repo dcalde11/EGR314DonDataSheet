@@ -26,7 +26,7 @@
 
     
       
-        <title>Pcb - EGR 314 Donovan's Data Sheet</title>
+        <title>Hall Effect Sensor Control PCB - EGR 314 Donovan's Data Sheet</title>
       
     
     
@@ -89,6 +89,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#hall-effect-sensor-control-pcb" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -120,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pcb
+              Hall Effect Sensor Control PCB
             
           </span>
         </div>
@@ -771,16 +776,57 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Hall Effect Sensor Control PCB
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Pcb
+    Hall Effect Sensor Control PCB
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#pcb-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCB Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1005,6 +1051,25 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#pcb-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCB Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1027,9 +1092,17 @@
   
 
 
-  <h1>Pcb</h1>
-
-
+<h1 id="hall-effect-sensor-control-pcb">Hall Effect Sensor Control PCB</h1>
+<p>This PCB interfaces multiple Hall effect sensors with an ESP32 microcontroller for magnetic field detection and system control. The board includes a regulated power
+system that converts a +12 V input into stable +5 V and +3.3 V rails using switching regulators and filtering components. The +3.3 V rail powers the ESP32 module and 
+Hall effect sensor ICs, while the +5 V rail supports servo outputs and auxiliary circuitry.</p>
+<p>Two I²C buses are implemented using digital Hall effect sensors with pull-up resistors and decoupling capacitors to ensure reliable communication. User interface 
+elements such as push buttons, status LEDs, and debugging connectors are included for monitoring and testing. Additional connectors provide outputs for servo control 
+and other external peripherals.</p>
+<p>Test points are distributed across the board for key signals and power rails, simplifying debugging and validation during development.</p>
+<h2 id="pcb-resources">PCB Resources</h2>
+<p>The Hall Effect Sensor Control PCB interfaces multiple Hall effect sensors with the ESP32 microcontroller, provides regulated power rails, and supports servo control 
+and debugging.</p>
 
 
 
