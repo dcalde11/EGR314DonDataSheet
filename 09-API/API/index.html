@@ -1490,7 +1490,6 @@ the team website. Each message is framed and includes sender/receiver addressing
 <hr>
 <h1 id="actual-firmware-implementation-message-handling-system">Actual Firmware Implementation (Message Handling System)</h1>
 <p>The firmware runs on an ESP32-S3 using MicroPython and integrates UART communication, a Hall effect sensor via I²C, and LED status indicators. It operates as a real-time node in a daisy-chain messaging system.</p>
-<hr>
 <h2 id="uart-communication">UART Communication</h2>
 <p>The system uses a framed UART protocol with <code>AZ</code> (start) and <code>YB</code> (end) delimiters. Each message contains a sender ID, receiver ID, and payload.</p>
 <h3 id="message-types-handled">Message Types Handled</h3>
@@ -1503,7 +1502,6 @@ the team website. Each message is framed and includes sender/receiver addressing
 - Messages not addressed to the device are ignored or forwarded
 - TX/RX LEDs indicate communication activity</p>
 <p>If the sender is <code>b'G'</code>, the system appends the latest sensor angle to the payload and forwards it to the next node (<code>b'E'</code>).</p>
-<hr>
 <h2 id="i2c-sensor-system">I²C Sensor System</h2>
 <p>A Hall effect rotary sensor (address <code>0x36</code>) is read using SoftI2C at a fixed rate of 10 Hz.</p>
 <ul>
@@ -1511,7 +1509,6 @@ the team website. Each message is framed and includes sender/receiver addressing
 <li>Stores the latest angle for use in message processing</li>
 <li>If the sensor is not detected, the system triggers an error state</li>
 </ul>
-<hr>
 <h2 id="led-status-indicators">LED Status Indicators</h2>
 <ul>
 <li><strong>TX (GPIO4):</strong> UART transmission activity  </li>
@@ -1519,20 +1516,17 @@ the team website. Each message is framed and includes sender/receiver addressing
 <li><strong>Sensor OK (GPIO6):</strong> Valid I²C sensor detection  </li>
 <li><strong>Error (GPIO7):</strong> Sensor failure or communication fault  </li>
 </ul>
-<hr>
 <h2 id="system-behavior">System Behavior</h2>
 <p>The firmware runs in a continuous non-blocking loop:
 - UART is constantly polled for incoming data<br>
 - Sensor is updated every 100 ms<br>
 - Valid messages are processed and forwarded immediately<br>
 - Invalid frames and buffer overflows are discarded  </p>
-<hr>
 <h2 id="communication-summary">Communication Summary</h2>
 <ul>
 <li><strong>Messages Received:</strong> 1 primary type (incoming relay + speed/sensor trigger messages)  </li>
 <li><strong>Messages Sent:</strong> 1 primary type (relay output with appended sensor angle)  </li>
 </ul>
-<hr>
 <h2 id="key-design-notes">Key Design Notes</h2>
 <p>Compared to the original specification, the implementation:
 - Uses a simplified framed UART protocol (<code>AZ</code> / <code>YB</code>)
@@ -1540,6 +1534,9 @@ the team website. Each message is framed and includes sender/receiver addressing
 - Combines sensor reading and communication in one execution loop
 - Prioritizes real-time reliability over strict protocol complexity  </p>
 <hr>
+<h2 id="firmware-source-code">Firmware Source Code</h2>
+<p>You can download the full UART and Angle implementation here:</p>
+<p><a href="https://raw.githubusercontent.com/dcalde11/EGR314DonDataSheet/4a1f67aaadf7519277476e082b6c2123e0716abe/docs/09-API/BasicCodewithUart.py">Download Basic UART Code</a></p>
 
 
 
