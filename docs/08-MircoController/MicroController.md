@@ -102,14 +102,16 @@ The table below summarizes the GPIO assignments used by the firmware and PCB des
 
 The implemented firmware runs on the ESP32-S3-WROOM-N4 and provides real-time communication between sensors, external devices, and actuators. The system is built around UART messaging, I²C sensor acquisition, and LED-based status indication for debugging and system monitoring.
 
+---
+
 ### Core Communication System
 
 The firmware uses a structured UART packet format with start and end delimiters (`AZ` and `YB`) to ensure reliable data transmission. Each message contains:
-- A sender ID
-- A receiver ID
-- A payload containing command or sensor data
+- A sender ID  
+- A receiver ID  
+- A payload containing command or sensor data  
 
-Incoming UART data is buffered and parsed only when a complete valid frame is detected. This prevents partial or corrupted messages from being processed.
+Incoming UART data is buffered and only processed when a complete valid frame is detected. This prevents partial or corrupted messages from being interpreted.
 
 When a message is received and addressed to the device, it is decoded and processed based on the sender type. If the message originates from a designated transmitter node, the system appends the current sensor angle and relays the updated packet to another module.
 
@@ -117,26 +119,26 @@ When a message is received and addressed to the device, it is decoded and proces
 
 ### Sensor Acquisition (I²C System)
 
-The system uses a SoftI2C interface to communicate with a Hall effect rotary sensor. The firmware periodically reads raw sensor data from a fixed register address, then converts the 12-bit value into a physical angle ranging from 0° to 360°.
+The system uses a SoftI2C interface to communicate with a Hall effect rotary sensor. The firmware periodically reads raw sensor data from a fixed register address, then converts the 12-bit value into an angle ranging from 0° to 360°.
 
-To ensure stable readings:
-- Sensor polling is limited to a fixed interval (10 Hz)
-- Read failures are trapped using exception handling
-- A global variable stores the latest valid angle for use in communication logic
+To ensure stable operation:
+- Sensor polling is limited to 10 Hz  
+- Read failures are handled using exception handling  
+- The latest valid angle is stored globally for use in communication logic  
 
-If the sensor is not detected on the I²C bus, the system disables normal processing and triggers an error state.
+If the sensor is not detected on the I²C bus, the system halts normal processing and enters an error state.
 
 ---
 
 ### LED Status Indication
 
 Four onboard LEDs provide real-time system feedback:
-- **TX LED:** flashes when a UART transmission occurs
-- **RX LED:** flashes when a valid message is received
-- **Sensor OK LED:** indicates successful I²C sensor detection
-- **Error LED:** indicates sensor failure or communication issues
+- **TX LED:** flashes during UART transmission  
+- **RX LED:** flashes when a valid message is received  
+- **Sensor OK LED:** indicates successful I²C sensor detection  
+- **Error LED:** indicates sensor or communication faults  
 
-This allows hardware-level debugging without requiring serial monitoring.
+This enables hardware-level debugging without requiring serial monitoring tools.
 
 ---
 
@@ -149,30 +151,70 @@ When a valid UART frame is received:
 4. If the message is intended for this device, it is processed  
 
 If the sender is a recognized upstream node, the system:
-- Combines the received payload with the latest sensor reading
-- Formats a new response message
-- Transmits it to the next node in the communication chain
+- Combines the received payload with the latest sensor reading  
+- Formats a new response message  
+- Transmits it to the next module in the chain  
 
-This creates a chained data relay system between modules.
+This creates a chained communication system between nodes.
 
 ---
 
 ### System Timing and Control
 
-The firmware operates on a non-blocking loop structure:
-- UART is continuously polled for incoming data
-- Sensor readings are updated at a fixed interval (10 Hz)
-- LED indicators respond instantly to system events
+The firmware operates using a non-blocking loop structure:
+- UART is continuously polled for incoming data  
+- Sensor readings are updated at 10 Hz  
+- LED indicators respond immediately to system events  
 
-This ensures deterministic timing without freezing execution during sensor or communication delays.
+This ensures consistent timing without blocking execution during communication or sensor reads.
 
 ---
 
 ### Error Handling Behavior
 
 The system includes built-in fault detection:
-- If the I²C sensor is not detected, normal operation is paused
-- Communication errors reset the UART buffer to prevent desynchronization
-- Sensor read exceptions are caught to prevent system crashes
+- If the I²C sensor is not detected, normal operation is paused  
+- Communication errors reset the UART buffer to prevent desynchronization  
+- Sensor read exceptions are caught to prevent system crashes  
 
-In error states, LEDs provide immediate visual feedback while preserving system stability.
+In error states, LEDs provide immediate visual feedback while maintaining system stability.
+
+---
+
+## Microcontroller Pin Usage (Actual Implementation)
+
+The firmware uses a simplified subset of the ESP32-S3 pin configuration compared to the full system design. Only essential communication, sensor, and indicator pins are active.
+
+---
+
+### Active Pin Assignments
+
+| GPIO | Function | Description |
+|------|----------|-------------|
+| GPIO4  | TX LED Indicator | Blinks during UART transmission |
+| GPIO5  | RX LED Indicator | Blinks when UART message is received |
+| GPIO6  | Sensor OK LED | Indicates valid I²C sensor detection |
+| GPIO7  | Error LED | Indicates sensor or communication faults |
+| GPIO35 | I²C SCL | Clock line for SoftI2C sensor communication |
+| GPIO36 | I²C SDA | Data line for SoftI2C sensor communication |
+| GPIO38 | UART TX | Transmits processed system data |
+| GPIO10 | UART RX | Receives incoming messages and commands |
+
+---
+
+### Pin Usage Summary
+
+- **I²C Interface (GPIO35, GPIO36):** Used for reading angular position data from the Hall effect sensor.  
+- **UART Communication (GPIO10, GPIO38):** Handles all system messaging and data exchange.  
+- **LED Indicators (GPIO4–GPIO7):** Provide real-time system status feedback.
+
+---
+
+### Design Notes
+
+Compared to the full hardware architecture, this firmware version does not implement:
+- Dual I²C buses  
+- PWM servo control outputs  
+- External debug GPIO triggers  
+
+This simplified configuration focuses on core functionality: sensor acquisition, UART communication, and system status monitoring.
