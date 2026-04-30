@@ -16,15 +16,15 @@ The design ensures:
 - Correct microcontroller interfacing  
 - System protection and filtering where required
 
-
 - **Schematic Image Preview:**  
-  ![Schematic Final V2](https://github.com/dcalde11/EGR314DonDataSheet/raw/cfbef2b9d225c8a2ee0a2af7c451ac4c43d22390/docs/05-Schematic/SchematicFinalV2.png)
+  ![Schematic Final](https://github.com/dcalde11/EGR314DonDataSheet/raw/6f55fc1257101241bbe329a0fdce8a7df8599664/docs/05-Schematic/hall_effect_page_1.png)
 
-**Figure 1:**  schematic of the Hall Effect module.
+**Figure 1:** schematic of the Hall Effect module.
 
 ---
 
 ## Resources
 
-- **Schematic PDF:** [View 314_HallEffect.pdf](https://github.com/dcalde11/EGR314DonDataSheet/raw/cfbef2b9d225c8a2ee0a2af7c451ac4c43d22390/docs/05-Schematic/314_HallEffect.pdf)  
-- **Complete Project ZIP:** [Download 314_HallEffectFinalV2.zip](https://github.com/dcalde11/EGR314DonDataSheet/raw/cfbef2b9d225c8a2ee0a2af7c451ac4c43d22390/docs/05-Schematic/314_HallEffectFinalV2.zip)  
+- **Schematic PDF:** [View 314_HallEffect.pdf](https://github.com/dcalde11/EGR314DonDataSheet/raw/6f55fc1257101241bbe329a0fdce8a7df8599664/docs/05-Schematic/314_HallEffect.pdf)  
+- **Complete Project ZIP:** [Download Final314HallEffect.zip](https://github.com/dcalde11/EGR314DonDataSheet/raw/6f55fc1257101241bbe329a0fdce8a7df8599664/docs/05-Schematic/FInal314HallEffect.zip)  
+ 
