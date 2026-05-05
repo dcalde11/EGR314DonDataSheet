@@ -89,6 +89,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#reflection" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1107,6 +1112,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Reflection
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1117,6 +1135,85 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#review-of-modules-success" class="md-nav__link">
+    <span class="md-ellipsis">
+      Review of Module's Success
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Review of Module's Success">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#successfully-accomplished-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Successfully Accomplished Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements-not-fully-met-or-missed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements Not Fully Met or Missed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microcontrollermodule-startup-tip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microcontroller/Module Startup Tip
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lessons Learned
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations-for-future-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommendations for Future Students
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1203,6 +1300,76 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#review-of-modules-success" class="md-nav__link">
+    <span class="md-ellipsis">
+      Review of Module's Success
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Review of Module's Success">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#successfully-accomplished-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Successfully Accomplished Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements-not-fully-met-or-missed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements Not Fully Met or Missed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microcontrollermodule-startup-tip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microcontroller/Module Startup Tip
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lessons Learned
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations-for-future-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommendations for Future Students
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1225,9 +1392,68 @@
   
 
 
-  <h1>Reflection</h1>
-
-
+<h1 id="reflection">Reflection</h1>
+<p>This document is formatted for GitHub and intended to be included as a standalone markdown page in the project repository.</p>
+<hr>
+<h2 id="review-of-modules-success">Review of Module's Success</h2>
+<p>Reviewing the module requirements, several core objectives were successfully achieved while others remain in progress or partially implemented.</p>
+<h3 id="successfully-accomplished-requirements">Successfully Accomplished Requirements</h3>
+<ul>
+<li>Implementation of a working UART communication system using framed messages (AZ/YB protocol).</li>
+<li>Integration of Hall effect sensor data acquisition via I²C (SoftI2C interface).</li>
+<li>Conversion of raw sensor values into a usable 0–360° angular measurement.</li>
+<li>Development of a non-blocking firmware loop structure for continuous system operation.</li>
+<li>Implementation of LED-based status indicators for TX, RX, sensor status, and error detection.</li>
+<li>Reliable message parsing with start/end frame validation and buffer handling.</li>
+<li>Basic relay-based communication between nodes in a daisy-chain architecture.</li>
+</ul>
+<h3 id="requirements-not-fully-met-or-missed">Requirements Not Fully Met or Missed</h3>
+<ul>
+<li>Full dual I²C bus implementation for separated subsystems (only a single I²C bus is currently active in firmware).</li>
+<li>Servo motor PWM control system for fin actuation is not yet implemented.</li>
+<li>Dead-reckoning position estimation (x, y, z integration using speed and orientation) is not implemented in the current firmware build.</li>
+<li>Debug GPIO trigger system (external hardware-based debug toggles) is not fully integrated into firmware.</li>
+<li>Complete alignment with the original Team 307 structured message specification (uint16_t standard) was simplified in the current implementation.</li>
+</ul>
+<hr>
+<h2 id="microcontrollermodule-startup-tip">Microcontroller/Module Startup Tip</h2>
+<p>Several challenges were encountered during system startup, particularly around communication reliability, sensor initialization, and system synchronization. The following tips summarize key lessons learned:</p>
+<ul>
+<li>Always verify GPIO assignments early, as mismatched pin mappings between schematic design and firmware caused significant debugging delays.</li>
+<li>Ensure I²C devices are detected before entering the main loop; adding a startup sensor check prevents silent system failure.</li>
+<li>UART framing issues (missing or incorrect start/end bytes) can cause cascading communication failures, so strict validation is essential.</li>
+<li>Implement LED indicators early in development to provide real-time feedback without relying solely on serial monitoring.</li>
+<li>Avoid blocking delays in the main loop, as they interfere with sensor polling and UART responsiveness.</li>
+<li>Use incremental testing (sensor → UART → integration) rather than building full system logic before verifying subsystems.</li>
+<li>Maintain a consistent message protocol format across all nodes to avoid parsing mismatches in the daisy-chain network.</li>
+</ul>
+<hr>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>Working on this project provided significant insight into embedded systems design, real-time communication, and hardware-software integration. One of the most important lessons learned was the importance of system modularity. Designing the firmware in independent components (sensor acquisition, communication, and output control) made debugging and future expansion significantly easier.</p>
+<p>Another key takeaway was the importance of strict communication protocols. Even small inconsistencies in message framing or data formatting led to major system instability, highlighting the need for disciplined protocol design in multi-node systems.</p>
+<p>Timing and non-blocking execution were also critical lessons. Early implementations that used blocking delays caused missed sensor readings and UART buffer overflows, demonstrating the importance of event-driven or continuously polling architectures in embedded systems.</p>
+<p>Hardware abstraction was another major learning point. Differences between the intended schematic design and actual firmware implementation revealed how important it is to keep hardware documentation synchronized with software development.</p>
+<p>Finally, debugging strategies evolved significantly over the course of the project. LED indicators, staged subsystem testing, and sensor-first validation proved far more effective than relying solely on serial output.</p>
+<p>Overall, the project reinforced the importance of incremental development, clear system architecture, and disciplined communication design in embedded systems engineering.</p>
+<hr>
+<h2 id="recommendations-for-future-students">Recommendations for Future Students</h2>
+<ol>
+<li>
+<p>Begin development by validating hardware connections and GPIO assignments before writing full firmware logic, as early mismatches can lead to difficult debugging later.</p>
+</li>
+<li>
+<p>Build and test each subsystem independently (sensor reading, UART communication, actuator control) before integrating them into a complete system.</p>
+</li>
+<li>
+<p>Use strict and consistent communication protocols from the beginning, including defined start/end frames and fixed message structures.</p>
+</li>
+<li>
+<p>Avoid blocking delays in embedded firmware and instead design systems using non-blocking loops or timed polling methods.</p>
+</li>
+<li>
+<p>Implement basic debugging tools such as LED indicators or serial logs early in the project to simplify troubleshooting and system validation.</p>
+</li>
+</ol>
 
 
 
