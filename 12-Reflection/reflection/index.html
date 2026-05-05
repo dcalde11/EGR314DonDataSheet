@@ -1190,15 +1190,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lessons-learned" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lessons Learned
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#recommendations-for-future-students" class="md-nav__link">
     <span class="md-ellipsis">
       Recommendations for Future Students
@@ -1346,15 +1337,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lessons-learned" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lessons Learned
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#recommendations-for-future-students" class="md-nav__link">
     <span class="md-ellipsis">
       Recommendations for Future Students
@@ -1388,10 +1370,8 @@
 
   <h1>Reflection</h1>
 
-<p>This document is formatted for GitHub and intended to be included as a standalone markdown page in the project repository.</p>
-<hr>
 <h2 id="review-of-modules-success">Review of Module's Success</h2>
-<p>Reviewing the module requirements, several core objectives were successfully achieved while others remain in progress or partially implemented.</p>
+<p>Reviewing the module requirements, several objectives were successfully achieved while others remained in progress or partially implemented.</p>
 <h3 id="successfully-accomplished-requirements">Successfully Accomplished Requirements</h3>
 <ul>
 <li>Implementation of a working UART communication system using framed messages (AZ/YB protocol).</li>
@@ -1404,26 +1384,23 @@
 </ul>
 <h3 id="requirements-not-fully-met-or-missed">Requirements Not Fully Met or Missed</h3>
 <ul>
-<li>Full dual I²C bus implementation for separated subsystems (only a single I²C bus is currently active in firmware).</li>
+<li>Full dual I²C bus implementation for separated subsystems (only a single I²C bus is currently active).</li>
 <li>Servo motor PWM control system for fin actuation is not yet implemented.</li>
 <li>Dead-reckoning position estimation (x, y, z integration using speed and orientation) is not implemented in the current firmware build.</li>
 <li>Debug GPIO trigger system (external hardware-based debug toggles) is not fully integrated into firmware.</li>
-<li>Complete alignment with the original Team 307 structured message specification (uint16_t standard) was simplified in the current implementation.</li>
+<li>Complete alignment with the original Team 307 structured message specification was simplified in the current implementation.</li>
 </ul>
 <hr>
 <h2 id="microcontrollermodule-startup-tip">Microcontroller/Module Startup Tip</h2>
-<p>Several challenges were encountered during system startup, particularly around communication reliability, sensor initialization, and system synchronization. The following tips summarize key lessons learned:</p>
+<p>Several challenges were encountered during system startup, particularly around communication reliability amoung team members, sensor initialization, and system synchronization. The following tips summarize key lessons learned:</p>
 <ul>
 <li>Always verify GPIO assignments early, as mismatched pin mappings between schematic design and firmware caused significant debugging delays.</li>
-<li>Ensure I²C devices are detected before entering the main loop; adding a startup sensor check prevents silent system failure.</li>
-<li>UART framing issues (missing or incorrect start/end bytes) can cause cascading communication failures, so strict validation is essential.</li>
-<li>Implement LED indicators early in development to provide real-time feedback without relying solely on serial monitoring.</li>
-<li>Avoid blocking delays in the main loop, as they interfere with sensor polling and UART responsiveness.</li>
-<li>Use incremental testing (sensor → UART → integration) rather than building full system logic before verifying subsystems.</li>
+<li>Ensure I²C devices are detected before entering the main loop; adding a startup sensor check prevents system failure.</li>
+<li>UART framing issues (missing or incorrect start/end bytes) can cause communication failures, so validation is important.</li>
+<li>Implement LED indicators early in development to provide real-time feedback.</li>
 <li>Maintain a consistent message protocol format across all nodes to avoid parsing mismatches in the daisy-chain network.</li>
 </ul>
 <hr>
-<h2 id="lessons-learned">Lessons Learned</h2>
 <p>Working on this project provided significant insight into embedded systems design, real-time communication, and hardware-software integration. One of the most important lessons learned was the importance of system modularity. Designing the firmware in independent components (sensor acquisition, communication, and output control) made debugging and future expansion significantly easier.</p>
 <p>Another key takeaway was the importance of strict communication protocols. Even small inconsistencies in message framing or data formatting led to major system instability, highlighting the need for disciplined protocol design in multi-node systems.</p>
 <p>Timing and non-blocking execution were also critical lessons. Early implementations that used blocking delays caused missed sensor readings and UART buffer overflows, demonstrating the importance of event-driven or continuously polling architectures in embedded systems.</p>
