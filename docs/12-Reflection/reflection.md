@@ -1,4 +1,7 @@
-# Reflection
+---
+title: Reflection
+---
+
 
 This document is formatted for GitHub and intended to be included as a standalone markdown page in the project repository.
 
