@@ -1,7 +1,7 @@
 from machine import Pin, SoftI2C, UART
 import time
 
-# ================= LED SETUP =================
+
 leds = [
     Pin(4, Pin.OUT),  # LED0 TX
     Pin(5, Pin.OUT),  # LED1 RX
@@ -9,25 +9,25 @@ leds = [
     Pin(7, Pin.OUT)   # LED3 ERROR
 ]
 
-# ================= I2C SETUP =================
+
 i2c = SoftI2C(scl=Pin(35), sda=Pin(36), freq=100000)
 ADDR = 0x36
 
-# ================= UART SETUP =================
+
 uart = UART(2, baudrate=9600, tx=Pin(38), rx=Pin(10))
 
-# ================= CONFIG =================
+
 my_id = b'D'
 MAX_MESSAGE_LEN = 64
 
-# ================= SENSOR VALUE =================
+
 current_angle = 0.0
 
-# ================= SENSOR TIMING =================
+
 last_sensor_read = 0
 SENSOR_INTERVAL_MS = 100  # 10 Hz
 
-# ================= LED HELPERS =================
+
 def leds_off():
     for l in leds:
         l.value(0)
@@ -48,14 +48,14 @@ def led_sensor_ok(state):
 def led_error(state):
     leds[3].value(1 if state else 0)
 
-# ================= SENSOR CHECK =================
+
 def check_sensor():
     return ADDR in i2c.scan()
 
 sensor_ok = check_sensor()
 led_sensor_ok(sensor_ok)
 
-# ================= UART SEND =================
+
 def send_message(sender, receiver, payload):
     frame = b'AZ' + sender + receiver + payload + b'YB'
 
@@ -64,7 +64,7 @@ def send_message(sender, receiver, payload):
 
     print("TX FRAME:", frame)
 
-# ================= MESSAGE HANDLER =================
+
 def handle_message(frame):
     global current_angle
 
@@ -86,7 +86,7 @@ def handle_message(frame):
     if receiver != my_id:
         return
 
-    # ================= RELAY LOGIC =================
+
     if sender == b'G':
         word = payload
 
@@ -95,13 +95,13 @@ def handle_message(frame):
 
         send_message(my_id, b'E', combined)
 
-# ================= UART BUFFER =================
+
 buffer = b''
 
-# ================= MAIN LOOP =================
+
 while True:
 
-    # -------- UART RECEIVE --------
+   
     if uart.any():
         data = uart.read()
         if data:
@@ -123,7 +123,7 @@ while True:
                 except:
                     buffer = b''
 
-    # -------- SENSOR STATUS --------
+    
     sensor_ok = check_sensor()
     led_sensor_ok(sensor_ok)
     led_error(not sensor_ok)
@@ -131,7 +131,7 @@ while True:
     if not sensor_ok:
         continue
 
-    # -------- SLOW SENSOR READ (10 Hz) --------
+    
     now = time.ticks_ms()
 
     if time.ticks_diff(now, last_sensor_read) > SENSOR_INTERVAL_MS:
