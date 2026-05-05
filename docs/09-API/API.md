@@ -14,7 +14,7 @@ All messages listed below exist inside the message data field of the class proto
 
 ---
 
-# Message Summary
+### Message Summary
 
 ## Messages Sent by This Subsystem
 | Message Type | Name              | Description |
@@ -173,7 +173,7 @@ All messages listed below exist inside the message data field of the class proto
 
 ---
 
-# Actual Firmware Implementation (Message Handling System)
+### Actual Firmware Implementation (Message Handling System)
 
 The firmware runs on an ESP32-S3 using MicroPython and integrates UART communication, a Hall effect sensor via I²C, and LED status indicators. It operates as a real-time node in a daisy-chain messaging system.
 
