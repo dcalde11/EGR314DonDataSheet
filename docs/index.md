@@ -66,17 +66,32 @@ within the Team Website as well as my Teammates websites
 
 - [Chosen Design](https://egr-314-team-307-spring-2026.github.io/Team307.github.io/02-Concept-Design/Design/)
 
-### Direct Links 
+### Direct Links
 Here are links across my website that help you navigate 
-to speific areas of interest that helped in the 
-development of my 3D Orientation and Positionment 
-Subsystem 
+to specific areas of interest that supported the development 
+of my 3D Orientation and Positioning Subsystem.
 
 * To review the details and relationships between the system’s components, refer to the [Block Diagram](https://dcalde11.github.io/EGR314DonDataSheet/02-Block-Diagram/Block-Diagram/).
+
 * To review the system’s components, refer to the [Component Selection](https://dcalde11.github.io/EGR314DonDataSheet/03-Component-Selection/Component-Selection/).
+
 * To review the firmware implementation, refer to the [Microcontroller Code](https://dcalde11.github.io/EGR314DonDataSheet/08-MircoController/MicroController/).
-*  To review power distribution, refer to the [Power Budget](https://dcalde11.github.io/EGR314DonDataSheet/07-Power%20Budget/powerbudget/).
+
+* To review the system communication protocol, refer to the [API Documentation](https://dcalde11.github.io/EGR314DonDataSheet/09-API/API/).
+
+* To review power distribution, refer to the [Power Budget](https://dcalde11.github.io/EGR314DonDataSheet/07-Power%20Budget/powerbudget/).
+
 * To review the cost of components in the subsystem, refer to the [Bill of Materials](https://dcalde11.github.io/EGR314DonDataSheet/04-BOM/BOM/).
-* To review the layout of the individual subsystem, refer to the [Schematic](https://dcalde11.github.io/EGR314DonDataSheet/05-Schematic/schematic/).
-* To review the physical board layout, refer to the [PCB Design](https://dcalde11.github.io/EGR314DonDataSheet/06-PCB/pcb/).
+
+* To review the layout of the subsystem, refer to the [Schematic](https://dcalde11.github.io/EGR314DonDataSheet/05-Schematic/schematic/).
+
+* To review the physical PCB layout, refer to the [PCB Design](https://dcalde11.github.io/EGR314DonDataSheet/06-PCB/pcb/).
+
+* To review system requirements, refer to the [Requirements](https://dcalde11.github.io/EGR314DonDataSheet/01-Requirements/Requirements/).
+
+* To review hardware revisions and updates, refer to the [Hardware V2.0](https://dcalde11.github.io/EGR314DonDataSheet/10-Hardware%20V2.0/hardware/).
+
+* To review supporting files and documentation, refer to the [Resources](https://dcalde11.github.io/EGR314DonDataSheet/11-Resources/resources/).
+
+* To review final analysis and project conclusions, refer to the [Reflection](https://dcalde11.github.io/EGR314DonDataSheet/12-Reflection/reflection/).
 
