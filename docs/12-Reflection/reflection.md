@@ -60,6 +60,9 @@ Several challenges were encountered during system startup, particularly around c
 
 10. I learned that choosing the adequate team members are important as well.
 
+In other words I learned that splitting the system into smaller parts makes it much easier to fix and understand andthat communication rules have to be exact, or the whole system can stop
+working. I aslo learned that the hardware and code need to match, and testing small parts first helps avoid big problems later. not only that but I that good data handling, error checks,
+clear notes, and working with the right teammates all make the project go more smoothly.
 
 
 ---
