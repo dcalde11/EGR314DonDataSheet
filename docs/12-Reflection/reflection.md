@@ -38,19 +38,29 @@ Several challenges were encountered during system startup, particularly around c
 
 ---
 
+## Lessons Learned
+
+1. I learned that modular system design is essential in embedded systems because separating sensor reading, communication, and control logic makes debugging significantly easier and reduces system complexity.
+
+2. I learned that strict communication protocols are critical because even small inconsistencies in message framing or data formatting can cause complete system failure in multi-system UART networks.
+
+3. I learned that non-blocking code structure is necessary for real-time embedded systems because blocking delays interfere with sensor updates, UART communication, and overall system timing.
+
+4. I learned that hardware and firmware must always be kept the same because mismatches between schematic IO pin configuration and firmware implementation can cause difficult debugging sessions.
+
+5. I learned that early validation of individual subsystems is more effective than full system integration attempts, since testing sensors, UART, and outputs separately reduces the number of unknown failure points.
+
+6. I learned that debugging tools such as LED indicators are extremely valuable because they provide immediate hardware-level feedback.
+
+7. I learned that sensor noise and instability must be handled through filtering such as exponential smoothing, especially when converting raw sensor readings into usable control signals.
+
+8. I learned that system reliability depends heavily on robust error handling, because unhandled sensor failures or communication errors can cause the entire system to freeze or behave unpredictably.
+
+9. I learned that documentation consistency is just as important as code implementation, because unclear or outdated system descriptions can lead to incorrect assumptions during development and testing.
+
+10. I learned that choosing the adequate team members are important as well.
 
 
-Working on this project provided significant insight into embedded systems design, real-time communication, and hardware-software integration. One of the most important lessons learned was the importance of system modularity. Designing the firmware in independent components (sensor acquisition, communication, and output control) made debugging and future expansion significantly easier.
-
-Another key takeaway was the importance of strict communication protocols. Even small inconsistencies in message framing or data formatting led to major system instability, highlighting the need for disciplined protocol design in multi-node systems.
-
-Timing and non-blocking execution were also critical lessons. Early implementations that used blocking delays caused missed sensor readings and UART buffer overflows, demonstrating the importance of event-driven or continuously polling architectures in embedded systems.
-
-Hardware abstraction was another major learning point. Differences between the intended schematic design and actual firmware implementation revealed how important it is to keep hardware documentation synchronized with software development.
-
-Finally, debugging strategies evolved significantly over the course of the project. LED indicators, staged subsystem testing, and sensor-first validation proved far more effective than relying solely on serial output.
-
-Overall, the project reinforced the importance of incremental development, clear system architecture, and disciplined communication design in embedded systems engineering.
 
 ---
 
@@ -64,4 +74,4 @@ Overall, the project reinforced the importance of incremental development, clear
 
 4. Avoid blocking delays in embedded firmware and instead design systems using non-blocking loops or timed polling methods.
 
-5. Implement basic debugging tools such as LED indicators or serial logs early in the project to simplify troubleshooting and system validation.
+5. Implement basic debugging tools such as LED indicators in the project to simplify troubleshooting and system validation.
