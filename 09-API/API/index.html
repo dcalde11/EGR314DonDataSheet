@@ -1000,6 +1000,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messages-sent-by-this-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages Sent by This Subsystem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messages-received-by-this-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages Received by This Subsystem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broadcast-messages-acted-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      Broadcast Messages Acted On
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -1189,6 +1231,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messages-sent-by-this-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages Sent by This Subsystem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messages-received-by-this-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages Received by This Subsystem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broadcast-messages-acted-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      Broadcast Messages Acted On
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -1227,7 +1311,7 @@ the team website. Each message is framed and includes sender/receiver addressing
 </ul>
 <p>All messages listed below exist inside the message data field of the class protocol.</p>
 <hr>
-<h1 id="message-summary">Message Summary</h1>
+<h3 id="message-summary">Message Summary</h3>
 <h2 id="messages-sent-by-this-subsystem">Messages Sent by This Subsystem</h2>
 <table>
 <thead>
@@ -1610,7 +1694,7 @@ the team website. Each message is framed and includes sender/receiver addressing
 <li>Min/Max bounds</li>
 </ul>
 <hr>
-<h1 id="actual-firmware-implementation-message-handling-system">Actual Firmware Implementation (Message Handling System)</h1>
+<h3 id="actual-firmware-implementation-message-handling-system">Actual Firmware Implementation (Message Handling System)</h3>
 <p>The firmware runs on an ESP32-S3 using MicroPython and integrates UART communication, a Hall effect sensor via I²C, and LED status indicators. It operates as a real-time node in a daisy-chain messaging system.</p>
 <h2 id="uart-communication">UART Communication</h2>
 <p>The system uses a framed UART protocol with <code>AZ</code> (start) and <code>YB</code> (end) delimiters. Each message contains a sender ID, receiver ID, and payload.</p>
